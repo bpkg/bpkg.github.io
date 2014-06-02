@@ -58,10 +58,13 @@ Creates a new page. It will create the file `./about/index.html`.
 
 Alternative way to create a new page, on this case it will be `./about.html`.
 
----
+## Notes
 
-If you plan on further customizing the blog, it's highly recommended to
-read [this 10-minute introduction to Jekyll][intro].
+* When producing content (writing pages/posts) keep in mind
+  [this useful guide][posts]. It tells how to include images, display
+  post excerpts and highlight code snippets.
+* If you plan on further customizing the blog, it's highly recommended to
+  read [this 10-minute introduction to Jekyll][intro].
 
 ## Credits
 
@@ -77,4 +80,5 @@ This site uses [Jekyll Bootstrap][boots] with the great theme
 [boots]:   http://jekyllbootstrap.com/
 [theme]:   https://github.com/jekyllbootstrap/theme-the-program
 [saito]:   http://css.studiomohawk.com/
+[posts]:   http://jekyllrb.com/docs/posts/
 

@@ -1,46 +1,71 @@
 ---
 layout: page
 title: Home
+tabtitle: bpkg home
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+## bpkg is a _bash package manager_
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+_JavaScript has [npm][npm], Ruby has [Gems][gem], Python has [pip][pip] and now
+Shell has bpkg!_
 
-## Update Author Attributes
+With **bpkg** you can easily install and manage Bash packages.
 
-In `_config.yml` remember to specify your own data:
+It takes care of installing/uninstalling, execution permissions and everything
+so you can simply do the following:
 
-    title : My Blog =)
+{% highlight bash %}
+# Installs `term` on `/usr/local/bin` (https://github.com/bpkg/term)
+$ bpkg install term -g
+$ term
+{% endhighlight %}
 
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+Besides installing shell scripts globally you can use them on a _per-project
+basis_.
 
-The theme should reference these variables whenever needed.
+{% highlight bash %}
+# Installs `term` under the `deps/` directory
+$ bpkg install term
+$ ./deps/term/term.sh
+{% endhighlight %}
 
-## Sample Posts
+## Install
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+You can install **bpkg** from 3 methods:
 
-    $ rm -rf _posts/core-samples
+### 1. Install Script
 
-Here's a sample "posts list".
+Our custom install script will take care of everything for you.
+Just paste the following on your shell:
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% highlight bash %}
+$ curl -Lo- https://raw.githubusercontent.com/bpkg/bpkg/master/install.sh | bash
+{% endhighlight %}
 
-## To-Do
+### 2. clibs
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
+[clibs][clib] is a great package manager for the C language. If you have it,
+installing **bpkg** is as simple as:
 
+{% highlight bash %}
+$ clib install bpkg/bpkg
+{% endhighlight %}
+
+### 3. Source Code
+
+If you prefer to handle source code, clone **bpkg**'s repository and install it
+on the following way:
+
+{% highlight bash %}
+$ git clone https://github.com/bpkg/bpkg.git
+$ cd bpkg
+$ make install
+{% endhighlight %}
+
+[gem]: https://rubygems.org/
+[npm]: https://www.npmjs.org/
+[pip]: https://pypi.python.org/pypi/pip
+[clib]: https://github.com/clibs/clib
 
