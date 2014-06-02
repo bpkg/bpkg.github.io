@@ -35,6 +35,9 @@ preview it.
 
 To see the full site, point your browser to `localhost:40000`.
 
+If you make any changes on any files, it will regenerate the website
+automatically.
+
 ---
 
     $ rake post title="Hello, World!"
