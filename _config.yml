@@ -18,9 +18,28 @@ author:
 #  feedburner : feedname
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Custom values
+#
+# You can access those on every page with the `custom` namespace
+# like this:
+#
+#     {{ site.val.packages }}
+#
+# It will simply repace it with the text you specify here
+#
+val:
+  organization: https://github.com/bpkg/
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Site Build options
 #
-markdown    : kramdown # markdown interpreter (moved away from Maruku)
+
+# Markdown interpreter (moved away from Maruku)
+markdown : kramdown
+kramdown:
+  # Enabling Github Flavored Markdown
+  input: GFM
+
 highlighter : pygments # code highlighter
 
 # This is the default format.

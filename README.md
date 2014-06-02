@@ -65,6 +65,8 @@ Alternative way to create a new page, on this case it will be `./about.html`.
   post excerpts and highlight code snippets.
 * If you plan on further customizing the blog, it's highly recommended to
   read [this 10-minute introduction to Jekyll][intro].
+* If you change settings on the file `_config.yml`, automatic regeneration won't
+  work - you'll have to run the command `rake preview` again.
 
 ## Credits
 

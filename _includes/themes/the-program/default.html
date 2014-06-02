@@ -21,12 +21,26 @@
 				<nav class="nav-global">
 					<ul>
 						<li class="logo"><a href="/">{{ site.title }}</a></li>
-						<li class="archive"><a href="/archive">archive</a></li>
-						<li class="page"><a href="/pages">pages</a></li>
-						<li class="category"><a href="/categories">categories</a></li>
-						<li class="tag"><a href="/tags">tags</a></li>
-						<li class="forkme"><div><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=plusjade&repo=jekyll-bootstrap&type=fork&count=true"
-									allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe></div></li>
+
+						<li class="archive">
+						  <a href="/packages/name">packages by name</a></li>
+
+						<li class="archive">
+						  <a href="/packages/tag">packages by tag</a></li>
+
+						<li class="archive">
+						  <a href="/packages/category">packages by category</a></li>
+
+						<!-- github buttons -->
+						<li class="forkme">
+						  <div>
+							<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+							<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+							<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+
+						  </div>
+						</li>
+
 					</ul>
 				</nav>
 			</div><!-- unit-inner -->
@@ -49,8 +63,7 @@
 					<ul>
 						<li class="contact"><address><span class="author fn n">{{ site.author.name }}</span> - <span class="fn email">{{ site.author.email }}</span></address></li>
 						<li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github.com/{{ site.author.github }}</a></li>
-						<li class="twitter"><a href="http://twitter.com/{{ site.author.twitter }}/" rel="me">twitter.com/{{ site.author.twitter }}</a></li>
-						<li class="rss"><a href="http://feeds.feedburner.com/{{ site.author.feedname }}">Subscribe to RSS Feed</a></li>
+						<li class="rss"><a href="feed/rss.xml">Subscribe to RSS Feed</a></li>
 					</ul>
 				</div><!-- misc -->
 				<p class="licence">
