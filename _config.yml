@@ -1,12 +1,9 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Global site configuration
 
-# This is the default format.
-# For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title
-
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-pygments: true
-
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Authorship settings
+#
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
@@ -20,6 +17,18 @@ author:
 #  twitter    : username
 #  feedburner : feedname
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Site Build options
+#
+markdown    : kramdown # markdown interpreter (moved away from Maruku)
+highlighter : pygments # code highlighter
+
+# This is the default format.
+# For more see: http://jekyllrb.com/docs/permalinks/
+permalink: /:categories/:year/:month/:day/:title
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
 # Most places will/should use BASE_PATH to make the urls
@@ -30,7 +39,10 @@ author:
 #
 production_url : http://username.github.io
 
-# All Jekyll-Bootstrap specific configurations are namespaced into this hash
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Jekyll-Bootstrap specific configurations
+#
+# They are namespaced into this hash.
 #
 JB :
   version : 0.3.0
