@@ -1,7 +1,7 @@
 /* CUSTOM CSS FOR THE THEME
 --------------------------------------------------------------------------------- */
 
-// Subtitle for all posts (packages)
+/* Subtitle for all posts (packages) */
 .entry-title {
 	margin-bottom: 0;
 }
@@ -11,4 +11,17 @@
 	padding: 0;
 }
 
+hr {
+	border: 0;
+	height: 5px;
+
+	color: #2D2D2D;
+	background-color: #2D2D2D;
+}
+
+/* Thing at the footer */
+footer #footer-licence {
+	font-size: 70%;
+	margin-top: 50px;
+}
 

@@ -31,6 +31,8 @@ $ bpkg install term
 $ ./deps/term/term.sh
 {% endhighlight %}
 
+---
+
 ## Install
 
 You can install **bpkg** from 3 methods:

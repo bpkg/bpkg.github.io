@@ -10,13 +10,6 @@
 title   : bpkg
 tagline : lightweight bash package manager
 
-author:
-  name       : bpkg team
-  email      : info@bpkg.io
-  github     : bpkg
-#  twitter    : username
-#  feedburner : feedname
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Custom values
 #
