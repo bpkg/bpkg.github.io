@@ -3,77 +3,82 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+  <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+
 	<title>{% if page.tabtitle %}{{ page.tabtitle }}{% else %}{{ page.title }}{% endif %}</title>
+
 	<meta name="author" content="{{ site.author.name }}">
 	<link href='{{ ASSET_PATH }}/css/style.css' rel="stylesheet" media="all">
 	<link href="http://feeds.feedburner.com/{{ site.author.feedbaname }}" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
-</head>
-<body>
 
-<div id="page" class="hentry">
-	<header class="the-header">
+	<!-- Custom global CSS -->
+	<link href='{{ BASE_PATH }}/assets/custom.css' rel="stylesheet" media="all">
+  </head>
+
+  <body>
+	<div id="page" class="hentry">
+	  <header class="the-header">
 		<div class="unit-head">
-			<div class="unit-inner unit-head-inner">
-				<nav class="nav-global">
-					<ul>
-						<li class="logo"><a href="/">{{ site.title }}</a></li>
+		  <div class="unit-inner unit-head-inner">
+			<nav class="nav-global">
+			  <ul>
+				<li class="logo"><a href="/">{{ site.title }}</a></li>
 
-						<li class="archive">
-						  <a href="/packages/name">packages by name</a></li>
+				<li class="archive">
+				  <a href="/packages/name">packages by name</a></li>
 
-						<li class="archive">
-						  <a href="/packages/tag">packages by tag</a></li>
+				<li class="archive">
+				  <a href="/packages/tag">packages by tag</a></li>
 
-						<li class="archive">
-						  <a href="/packages/category">packages by category</a></li>
+				<li class="archive">
+				  <a href="/packages/category">packages by category</a></li>
 
-						<!-- github buttons -->
-						<li class="forkme">
-						  <div>
-							<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
-							<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
-							<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+				<!-- github buttons -->
+				<li class="forkme">
+				  <div>
+					<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+					<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+					<iframe src="http://ghbtns.com/github-btn.html?user=bpkg&repo=bpkg&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
 
-						  </div>
-						</li>
+				  </div>
+				</li>
 
-					</ul>
-				</nav>
-			</div><!-- unit-inner -->
+			  </ul>
+			</nav>
+		  </div><!-- unit-inner -->
 		</div><!-- unit-head -->
-	</header>
-	<div class="body" role="main">
+	  </header>
+	  <div class="body" role="main">
 		<div class="unit-body">
-			<div class="unit-inner unit-body-inner">
-				<div class="entry-content">
-					{{ content }}
-				</div>
-			</div><!-- unit-inner -->
+		  <div class="unit-inner unit-body-inner">
+			<div class="entry-content">
+			  {{ content }}
+			</div>
+		  </div><!-- unit-inner -->
 		</div><!-- unit-body -->
-	</div><!-- body -->
-	<footer class="the-footer">
+	  </div><!-- body -->
+	  <footer class="the-footer">
 		<div class="unit-foot">
-			<div class="unit-inner unit-foot-inner">
-				<div class="misc vcard">
-					<h4>about</h4>
-					<ul>
-						<li class="contact"><address><span class="author fn n">{{ site.author.name }}</span> - <span class="fn email">{{ site.author.email }}</span></address></li>
-						<li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github.com/{{ site.author.github }}</a></li>
-						<li class="rss"><a href="feed/rss.xml">Subscribe to RSS Feed</a></li>
-					</ul>
-				</div><!-- misc -->
-				<p class="licence">
-					Theme: <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
-					Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
-				</p>
-			</div><!-- unit-foot-inner -->
+		  <div class="unit-inner unit-foot-inner">
+			<div class="misc vcard">
+			  <h4>about</h4>
+			  <ul>
+				<li class="contact"><address><span class="author fn n">{{ site.author.name }}</span> - <span class="fn email">{{ site.author.email }}</span></address></li>
+				<li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github.com/{{ site.author.github }}</a></li>
+				<li class="rss"><a href="feed/rss.xml">Subscribe to RSS Feed</a></li>
+			  </ul>
+			</div><!-- misc -->
+			<p class="licence">
+			  Theme: <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
+			  Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
+			</p>
+		  </div><!-- unit-foot-inner -->
 		</div><!-- unit-foot -->
-	</footer>
-</div><!-- page -->
+	  </footer>
+	</div><!-- page -->
 <script>
 	(function(d, s) {
 		var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {

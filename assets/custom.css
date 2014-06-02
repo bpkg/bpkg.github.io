@@ -1,0 +1,14 @@
+/* CUSTOM CSS FOR THE THEME
+--------------------------------------------------------------------------------- */
+
+// Subtitle for all posts (packages)
+.entry-title {
+	margin-bottom: 0;
+}
+.entry-subtitle {
+	font-size: 130%;
+	margin: 0;
+	padding: 0;
+}
+
+

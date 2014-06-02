@@ -70,8 +70,8 @@ Alternative way to create a new page, on this case it will be `./about.html`.
 
 ## Credits
 
-This site uses [Jekyll Bootstrap][boots] with the great theme
-[the_program][theme], from [Yuya Saito][saito].
+This site uses [Jekyll Bootstrap][boots] with a heavily customized version of
+[the_program][theme] theme, originally made by [Yuya Saito][saito].
 
 [home]:    http://bpkg.io/
 [hub]:     https://github.com/bpkg/bpkg
