@@ -6,9 +6,30 @@ group: navigation
 ---
 {% include JB/setup %}
 
-<h2>All Packages</h2>
-<ul>
-{% assign pages_list = site.posts %}
-{% include JB/pages_list %}
-</ul>
+<table>
+  <thead>
+	<tr>
+	  <th>package</th>
+	  <th>description</th>
+	</tr>
+  </thead>
+  <tbody>
+
+{% for package in site.posts %}
+  {% if package.title != null %}
+    {% if group == null or group == package.group %}
+      <tr>
+		<td>
+		  <a href="{{ BASE_PATH }}{{package.url}}">{{package.title}}</a>
+		</td>
+		<td>
+		  {{package.description}}
+		</td>
+	  </tr>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+  </tbody>
+</table>
 
