@@ -32,3 +32,36 @@ p img {
 	padding : 5px;
 }
 
+
+/* Styling all tables on the site */
+table {
+	border: none;
+	margin: 20px 0;
+	width: 100%;
+}
+
+th {
+	border-bottom  : solid 1px rgb(100, 100, 100);
+	font-weight    : bold;
+	padding        : 5px;
+	text-align     : center;
+	vertical-align : top;
+}
+th:first-child {
+	border-right: solid 1px rgb(200, 200, 200);
+}
+
+td {
+	padding        : 3px 20px;
+	text-align     : left;
+	vertical-align : middle;
+}
+td:first-child {
+	text-align   : right;
+	border-right : solid 1px rgb(200, 200, 200);
+}
+
+tr:hover td {
+	background-color : rgb(220, 220, 220);
+}
+
