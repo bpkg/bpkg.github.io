@@ -47,7 +47,6 @@ There, it'll have this format:
     category:
     tags: []
     ---
-    {% raw %}{% include JB/setup %}{% endraw %}
 
 You must provide at least the following:
 
@@ -72,7 +71,6 @@ A _sample package information_ file would be like this:
     category: game
     tags: [fun, random, cute]
     ---
-    {% raw %}{% include JB/setup %}{% endraw %}
 	This package has a random outcome: it either erases your home directory or echoes a "fortune" (message-of-the-day).
 	## Usage
 	`fortune-fun`

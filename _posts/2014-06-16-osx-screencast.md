@@ -5,7 +5,7 @@ description: "Easily create a screencast on OS X in a few commands"
 category: default
 tags: [video, osx]
 ---
-{% include JB/setup %}
+
 
 Easily create a screencast on OS X in a few commands.
 Inspired from [this gist](https://gist.github.com/dergachev/4627207).
