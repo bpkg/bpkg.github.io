@@ -65,3 +65,27 @@ tr:hover td {
 	background-color : rgb(220, 220, 220);
 }
 
+
+/* the META part at the bottom of each package */
+.meta {
+	background-color : #393939;
+	color            : rgb(186, 186, 186);
+	padding          : 20px;
+	padding-bottom   : 1px;
+	text-align       : center;
+	margin-bottom    : 10px;
+}
+.meta .list-category a {
+	color : rgba(254, 121, 49, 1);
+}
+.meta .list-category a:hover {
+	color : white;
+}
+.meta .list-tag a {
+	color : rgba(54, 254, 49, 1);
+}
+.meta .list-tag a:hover {
+	color: white;
+}
+
+
