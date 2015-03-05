@@ -5,6 +5,7 @@ description: "Complete Node Reinstall. This deletes everything, yes everything, 
 category: nodejs
 tags: [osx, nodejs]
 ---
+
 This package re-installs Node.js, NPM and NVM.
 ## Usage
 `nodereinstall`
