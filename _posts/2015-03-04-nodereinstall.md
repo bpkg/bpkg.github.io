@@ -7,9 +7,14 @@ tags: [osx, nodejs]
 ---
 
 This package re-installs Node.js, NPM and NVM.
+
 ## Usage
-`nodereinstall`
+```
+$ nodereinstall
+```
+
 ## Links
+
 * [Source Code (Github)](https://github.com/brock/node-reinstall)
 * [Author: Brock Angelo](https://github.com/brock)
 
