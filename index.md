@@ -60,7 +60,7 @@ If you prefer to handle source code, clone **bpkg**'s repository and install it 
 {% highlight bash %}
 $ git clone https://github.com/bpkg/bpkg.git
 $ cd bpkg
-$ make install
+$ ./setup.sh install
 {% endhighlight %}
 
 [gem]: https://rubygems.org/
