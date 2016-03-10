@@ -43,7 +43,7 @@ Just paste the following on your shell:
 $ curl -sLo- http://get.bpkg.io | bash
 {% endhighlight %}
 
-If you want to see what's inside it, [access it directly](http://get.bpkg.io) or [check it out on the repository](https://raw.githubusercontent.com/bpkg/bpkg/master/install.sh).
+If you want to see what's inside it, [access it directly](http://get.bpkg.io) or [check it out on the repository](https://github.com/bpkg/bpkg/blob/master/setup.sh).
 
 ### 2. clibs
 
