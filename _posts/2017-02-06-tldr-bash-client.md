@@ -6,8 +6,8 @@ category: default
 tags: [color, github, docs, client, markdown, bash]
 ---
 {% include JB/setup %}
-Source code repo: https://github.com/pepa65/tldr-bash-client
-Author: pepa65 <solusos@passchier.net>
+* Source code repo: https://github.com/pepa65/tldr-bash-client
+* Author: pepa65 <solusos@passchier.net>
 
 # tldr-bash-client
 
@@ -45,16 +45,19 @@ coreutils, less, grep, unzip, curl / wget
   -m, --markdown <command>:   Show the markdown source for command
   -c, --cache:                Cache all pages by downloading archive from repo
   -u, --update:               Re-download index file from repo
+  -v, --version:              Version number and repo location
   [-h, -?, --help]:           This help overview
 
- All pages and the index are cached locally under ~/.config/tldr.
- By default, the cached copies will be re-downloaded after 60 days.
+ All pages and the index are cached locally under ~/.config/tldr
+ By default, the cached copies will be re-downloaded after 60 days
 ```
 
 ## Customisation
+
 The colors and other styling of the 5 elements of tldr pages can be modified
 either by editing the first few lines of the scipt, or by setting the following
 environment variables:
+
 * TLDR_TITLE_STYLE (defaults to: Newline Space Bold Yellow)
 * TLDR_DESCRIPTION_STYLE (defaults to: Space Yellow)
 * TLDR_EXAMPLE_STYLE (defaults to: Newline Bold Green)
@@ -62,7 +65,8 @@ environment variables:
 * TLDR_VALUE_STYLE (defaults to: Bold Cyan)
 
 Also the error color and page expiry can easily be set:
-* TLDR_ERROR_COLOR (defaults to: Red)
+
+* TLDR_ERROR_COLOR (defaults to: Space Red)
 * TLDR_EXPIRY (defaults to: 60)
 
 ## Contributing
