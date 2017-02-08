@@ -46,7 +46,6 @@ coreutils, less, grep, unzip, curl / wget
   -m, --markdown <command>:   Show the markdown source for command
   -c, --cache:                Cache all pages by downloading archive from repo
   -u, --update:               Re-download index file from repo
-
   -v, --version:              Version number and repo location
   [-h, -?, --help]:           This help overview
 
