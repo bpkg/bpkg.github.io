@@ -11,7 +11,13 @@ On a few words, you have to submit a pull request with your package information 
 
 Here's a step-by-step guide:
 
-## 1. Clone the website repository
+## 1. Fork the website repository
+
+Click: [Fork bpkg on github](https://github.com/bpkg/bpkg.github.io/fork)
+
+If you don't have a github account yet, you will need to create one.
+
+## 2. Clone the website repository
 
 The following commands will download our website under a directory called `bpkg.github.io` and then navigate to it.
 
@@ -26,7 +32,7 @@ Then, **make sure to create a branch for your package**. The following command d
 $ git checkout -b your-package-name
 {% endhighlight %}
 
-## 2. Add your project to it
+## 3. Add your project to it
 
 The command below will create a file on which you must enter your project's metadata. When you execute it, it will say which file you must edit.
 
@@ -80,7 +86,7 @@ A _sample package information_ file would be like this:
 	* [Source Code (GitHub)][https://github.com/your/repository]
 	* [Author: Satan](http://your.homepage.com)
 
-## 3. Submit it to us
+## 4. Submit it to us
 
 Finally, make a pull request with your changes to our repository.
 
