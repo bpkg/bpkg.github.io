@@ -55,7 +55,7 @@ You must provide at least the following:
 * **description**: One-line summary of what your package does.
 * **category**: Pick **one** of [all categories](/packages/category) that best suit your package.
 * **tags**: Several tags that give a clue on what your package is about. It must have `[this, format]`.
- [Here's a list of all tags](/packages/category). You can create your own, although we encourage you to pick already-existing ones.
+ [Here's a list of all tags](/packages/tag). You can create your own, although we encourage you to pick already-existing ones.
 * **source code link**: *Append a line* and put a link to the package's source code repository.
 * **author**: *Append another line* and place your name along with at least one contact info (homepage, email, twitter).
 
