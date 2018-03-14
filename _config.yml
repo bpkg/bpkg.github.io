@@ -33,7 +33,7 @@ kramdown:
   # Enabling Github Flavored Markdown
   input: GFM
 
-highlighter : pygments # code highlighter
+highlighter : rouge # code highlighter
 
 # This is the default format.
 # For more see: http://jekyllrb.com/docs/permalinks/
