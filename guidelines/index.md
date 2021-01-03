@@ -9,11 +9,12 @@ group  : navigation
 
 Here we lay down some info on the structure of a package.
 
-## package.json
+## bpkg.json
 
-Every package must have a file called `package.json`; it specifies package metadata on the [JSON format][json].
+Every package must have a file called `bpkg.json`; it specifies package metadata on the [JSON format][json].
+(For legacy reasons, this file may also be called `pacakge.json`).
 
-Here's an example of a well-formed `package.json`:
+Here's an example of a well-formed `bpkg.json`:
 
 ```json
 {
