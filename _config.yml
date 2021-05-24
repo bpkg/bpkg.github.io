@@ -156,4 +156,4 @@ JB :
   # where [HELPER] is the name of the helper you are overriding.
 
 
-theme: jekyll-theme-hacker
+theme: jekyll-theme-minimal
