@@ -6,8 +6,6 @@ category: default
 tags: [color, github, docs, client, markdown, bash]
 ---
 
-* Source code repo: https://github.com/pepa65/tldr-bash-client
-* Author: pepa65 <solusos@passchier.net>
 * Version: 0.3
 
 # tldr-bash-client
@@ -103,5 +101,10 @@ Or even better, send a pull request!
 Original client by Ray Lee http://github.com/raylee/tldr (MIT license)
 
 Relicensed under GPLv3+
+
+## Links
+
+* [Source code (Github)](https://github.com/pepa65/tldr-bash-client)
+* Author: [pepa65](mailto:solusos@passchier.net)
 
 {% include JB/setup %}

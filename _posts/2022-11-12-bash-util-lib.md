@@ -23,10 +23,9 @@ bpkg install [-g] wsi-services/bash-util-lib
 source "deps/bash-util/bash-util-lib.sh"
 ```
 
-
 ## Links
 
 * [Source Code (GitHub)](https://github.com/WSI-Services/bash-util-lib)
-* [Author: Sam Likins](https://github.com/samlikins)
+* Author: [Sam Likins](https://github.com/samlikins)
 
 {% include JB/setup %}

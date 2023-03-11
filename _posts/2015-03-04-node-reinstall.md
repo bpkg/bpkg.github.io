@@ -38,6 +38,6 @@ node-reinstall 0.12           specify a default node version (currently 0.10)
 ## Links
 
 * [Source Code (Github)](https://github.com/brock/node-reinstall)
-* [Author: Brock Angelo](https://github.com/brock)
+* Author: [Brock Angelo](https://github.com/brock)
 
 {% include JB/setup %}

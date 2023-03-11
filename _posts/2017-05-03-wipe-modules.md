@@ -74,13 +74,11 @@ Note that `crontab -r` will destroy all your crontabs, that's why it's a good id
 
 Cron is only supported in unix operating systems.
 
-
 ## Links
 
 * [Source Code (Github)](https://github.com/bntzio/wipe-modules)
-* [Author: Enrique Benitez](https://bntz.io)
+* Author: [Enrique Benitez](https://bntz.io)
 * [Contact (Twitter)](https://twitter.com/bntzio)
-
 
 ## License
 
