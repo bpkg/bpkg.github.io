@@ -5,7 +5,6 @@ description: "Display tldr pages: community driven man-by-example"
 category: default
 tags: [color, github, docs, client, markdown, bash]
 ---
-{% include JB/setup %}
 
 * Source code repo: https://github.com/pepa65/tldr-bash-client
 * Author: pepa65 <solusos@passchier.net>
@@ -104,3 +103,5 @@ Or even better, send a pull request!
 Original client by Ray Lee http://github.com/raylee/tldr (MIT license)
 
 Relicensed under GPLv3+
+
+{% include JB/setup %}

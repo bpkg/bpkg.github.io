@@ -85,3 +85,5 @@ Cron is only supported in unix operating systems.
 ## License
 
 MIT © [Enrique Benitez](https://bntz.io)
+
+{% include JB/setup %}

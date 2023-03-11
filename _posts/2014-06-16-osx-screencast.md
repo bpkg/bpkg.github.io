@@ -81,3 +81,4 @@ options:
 * [Source Code (GitHub)](https://github.com/bpkg/osx-screencast);
 * Author: [Joseph Werle](https://github.com/jwerle);
 
+{% include JB/setup %}

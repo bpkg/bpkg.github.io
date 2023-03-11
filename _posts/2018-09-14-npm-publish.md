@@ -19,3 +19,5 @@ PACKAGE_NAME=<name> NEW_VERSION=<version> npm-publish
 
 * [Source Code (GitHub)][https://github.com/sugarshin/npm-publish]
 * [Author: Shingo Sato](https://sugarshin.net)
+
+{% include JB/setup %}

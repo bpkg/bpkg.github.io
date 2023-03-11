@@ -35,3 +35,4 @@ more examples in [test code](https://github.com/sinkcup/magic-version/tree/main/
 * [Source Code](https://github.com/sinkcup/magic-version)
 * [Author: sink](https://github.com/sinkcup)
 
+{% include JB/setup %}
