@@ -5,17 +5,14 @@ description: "Bash Utility Library"
 category: bash
 tags: [cli, util, lib]
 ---
-# Bash-Util-Lib - Bash Utility Library
 
-A library of bash utility functions (from output colors to parameter processing) for use in small projects.
-
+**Bash Utility Library** - A library of bash utility functions (from output colors to parameter processing) for use in small projects.
 
 ## Install
 
 ```bash
 bpkg install [-g] wsi-services/bash-util-lib
 ```
-
 
 ## Usage
 

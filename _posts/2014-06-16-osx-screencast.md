@@ -6,7 +6,6 @@ category: default
 tags: [video, osx]
 ---
 
-
 Easily create a screencast on OS X in a few commands.
 Inspired from [this gist](https://gist.github.com/dergachev/4627207).
 

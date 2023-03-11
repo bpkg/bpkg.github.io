@@ -8,8 +8,6 @@ tags: [color, github, docs, client, markdown, bash]
 
 * Version: 0.3
 
-# tldr-bash-client
-
 **A fully-functional [bash](https://tiswww.case.edu/php/chet/bash/bashtop.html)
 client for the [tldr](https://github.com/tldr-pages/tldr) project, providing
 poignant examples of terminal commands.**
@@ -29,6 +27,7 @@ Alternately, you can do `sudo bpkg-install pepa65/tldr` if you have
 [bpkg](https://github.com/bpkg/bpkg) installed.
 
 ### Prerequisites
+
 coreutils, less, grep, unzip, curl / wget
 
 ## Usage
@@ -53,7 +52,7 @@ coreutils, less, grep, unzip, curl / wget
  By default, the cached copies will be freshly downloaded after 60 days.
 ```
 
-## Customisation
+## Customization
 
 The 5 elements in TLDR markup that can be styled with these colors and
 backgrounds (last one specified will be used) and modes (more can apply):

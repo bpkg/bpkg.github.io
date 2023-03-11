@@ -7,8 +7,6 @@ tags: [npm, nodejs]
 author: "@sugarshin"
 ---
 
-# npm-publish
-
 A npm module publisher.
 
 ## Usage

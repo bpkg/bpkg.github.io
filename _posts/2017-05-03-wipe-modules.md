@@ -6,10 +6,7 @@ category: bash
 tags: [nodejs, utility, utils]
 ---
 
-# wipe-modules
-
 > A little agent that removes the node_modules folder of non-active projects
-
 
 ## Why
 
@@ -18,7 +15,6 @@ If you're a Javascript developer, you know the `node_modules` directory holds th
 Enter `wipe-modules`, a little agent that wipes (eats, literally) that big `node_modules` directory of non-active projects.
 
 Why in Earth would you want to have those monster-sized `node_modules` folders on inactive projects? You got your `package.json` to recreate it whenever you want, right?
-
 
 ## Usage
 
@@ -38,7 +34,6 @@ $ wipe-modules --help
   That will remove the node_modules of your ~/code projects
   whose been inactive for 30 days or more.
 ```
-
 
 ## Using cron
 
