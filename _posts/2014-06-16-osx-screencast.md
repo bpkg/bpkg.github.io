@@ -11,7 +11,6 @@ Inspired from [this gist](https://gist.github.com/dergachev/4627207).
 
 {% highlight bash %}
 $ bpkg install -g osx-screencast
-
 {% endhighlight %}
 
 ## Usage

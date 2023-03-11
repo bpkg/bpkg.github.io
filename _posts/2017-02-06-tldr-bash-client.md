@@ -32,7 +32,7 @@ coreutils, less, grep, unzip, curl / wget
 
 ## Usage
 
-```
+```bash
  USAGE: tldr [option] [platform/]command
 
  [platform/]command:          Show page for command (from platform)

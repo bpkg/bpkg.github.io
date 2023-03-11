@@ -11,7 +11,9 @@ A npm module publisher.
 
 ## Usage
 
+```bash
 PACKAGE_NAME=<name> NEW_VERSION=<version> npm-publish
+```
 
 ## Links
 

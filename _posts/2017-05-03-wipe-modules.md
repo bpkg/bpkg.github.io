@@ -18,7 +18,7 @@ Why in Earth would you want to have those monster-sized `node_modules` folders o
 
 ## Usage
 
-```
+```bash
 $ wipe-modules --help
 
   Usage: wipe-modules [path] [days]
@@ -41,7 +41,9 @@ $ wipe-modules --help
 
 The default included `cron-file` file holds the following syntax:
 
-`0 11 * * * $HOME/bin/wipe-modules ~/code_dir 30`
+```bash
+0 11 * * * $HOME/bin/wipe-modules ~/code_dir 30
+```
 
 That is the crontab (cron table) file, it instructs cron to run the `wipe-modules ~/code_dir 30` script everyday at 11:00 am.
 
@@ -49,17 +51,17 @@ Edit the `cron-file` to match your own needs, see [how to set up a crontab](http
 
 Now set the `cron-file` crontab file in cron using:
 
-``
+```bash
 $ crontab ~/path_to_cronfile/cron-file
-``
+```
 
 And you're done!
 
 To check if you've successfully added your crontab type:
 
-``
+```bash
 $ crontab -l
-``
+```
 
 It should display your crontab.
 

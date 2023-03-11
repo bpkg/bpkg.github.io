@@ -12,27 +12,25 @@ This package re-installs Node.js and NPM using NVM or Nave.
 
 `node-reinstall` can typically be run as-is, though you can specify several arguments to customize to your liking.
 
-```
-$ node-reinstall
-```
-
-    completely re-installs Node & NPM and any global node modules.
-    It re-installs Node using NVM or Nave
-
-```
+```bash
 $ node-reinstall -h
-```
-    Usage:  node-reinstall [--nave|--nvm] [-h|--help] [-v|--version] [NODE_VERSION]
+node-reinstall
+        completely re-installs Node & NPM and any global node modules.
+        It re-installs Node using NVM or Nave
 
-## Commands:
+Usage:  node-reinstall [--nave|--nvm|--nvm-latest] [-h|--help] [-v|--version] [NODE_VERSION]
 
-```
-node-reinstall                re-install node and npm using nvm
-node-reinstall -h [--help]    show help
-node-reinstall -v [--version] show the node-reinstall version number
-node-reinstall --nave         re-install using nave
-node-reinstall --nvm          re-install using nvm (the default)
-node-reinstall 0.12           specify a default node version (currently 0.10)
+Commands:
+
+        node-reinstall                  re-install node and npm using nvm
+        node-reinstall [-h|--help]      show help
+        node-reinstall [-v|--version]   show the node-reinstall version number
+        node-reinstall [-f|--force]     installs defaults without user confirmation
+        node-reinstall --nave           re-install using nave
+        node-reinstall --nvm            re-install using stable nvm - the default
+        node-reinstall --nvm-latest     re-install using latest nvm - creationix/nvm:master
+        node-reinstall 0.12             specify a default node version - currently 
+
 ```
 
 ## Links
