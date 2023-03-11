@@ -2,8 +2,8 @@
 layout: post
 title: "osxbootstrap"
 description: "Bootstrap a new OSX workstation"
-category: "default"
-tags: ["Configuration"]
+category: default
+tags: [configuration]
 ---
 
 ## Links
