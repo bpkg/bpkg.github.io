@@ -6,13 +6,11 @@ category: default
 tags: [video, osx]
 ---
 
-
 Easily create a screencast on OS X in a few commands.
 Inspired from [this gist](https://gist.github.com/dergachev/4627207).
 
 {% highlight bash %}
 $ bpkg install -g osx-screencast
-
 {% endhighlight %}
 
 ## Usage
@@ -78,6 +76,7 @@ options:
 
 ## Links
 
-* [Source Code (GitHub)](https://github.com/bpkg/osx-screencast);
-* Author: [Joseph Werle](https://github.com/jwerle);
+* [Source Code (GitHub)](https://github.com/bpkg/osx-screencast)
+* Author: [Joseph Werle](https://github.com/jwerle)
 
+{% include JB/setup %}

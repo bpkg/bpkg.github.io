@@ -6,10 +6,7 @@ category: bash
 tags: [nodejs, utility, utils]
 ---
 
-# wipe-modules
-
 > A little agent that removes the node_modules folder of non-active projects
-
 
 ## Why
 
@@ -19,10 +16,9 @@ Enter `wipe-modules`, a little agent that wipes (eats, literally) that big `node
 
 Why in Earth would you want to have those monster-sized `node_modules` folders on inactive projects? You got your `package.json` to recreate it whenever you want, right?
 
-
 ## Usage
 
-```
+```bash
 $ wipe-modules --help
 
   Usage: wipe-modules [path] [days]
@@ -39,14 +35,15 @@ $ wipe-modules --help
   whose been inactive for 30 days or more.
 ```
 
-
 ## Using cron
 
 `wipe-modules` can be executed as a background job using using [cron](https://en.wikipedia.org/wiki/Cron)
 
 The default included `cron-file` file holds the following syntax:
 
-`0 11 * * * $HOME/bin/wipe-modules ~/code_dir 30`
+```bash
+0 11 * * * $HOME/bin/wipe-modules ~/code_dir 30
+```
 
 That is the crontab (cron table) file, it instructs cron to run the `wipe-modules ~/code_dir 30` script everyday at 11:00 am.
 
@@ -54,17 +51,17 @@ Edit the `cron-file` to match your own needs, see [how to set up a crontab](http
 
 Now set the `cron-file` crontab file in cron using:
 
-``
+```bash
 $ crontab ~/path_to_cronfile/cron-file
-``
+```
 
 And you're done!
 
 To check if you've successfully added your crontab type:
 
-``
+```bash
 $ crontab -l
-``
+```
 
 It should display your crontab.
 
@@ -74,14 +71,14 @@ Note that `crontab -r` will destroy all your crontabs, that's why it's a good id
 
 Cron is only supported in unix operating systems.
 
-
 ## Links
 
 * [Source Code (Github)](https://github.com/bntzio/wipe-modules)
-* [Author: Enrique Benitez](https://bntz.io)
+* Author: [Enrique Benitez](https://bntz.io)
 * [Contact (Twitter)](https://twitter.com/bntzio)
-
 
 ## License
 
 MIT © [Enrique Benitez](https://bntz.io)
+
+{% include JB/setup %}
