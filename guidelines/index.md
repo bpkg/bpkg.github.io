@@ -95,6 +95,15 @@ This is a hash of dependencies. The keys are the package names, and the values a
   }
 ```
 
+### dependencies-dev (optional)
+
+This is a hash of dependencies only needed during development.  Like the `dependencies` array, the keys are the package names, and the values are the version specifiers; `'master'` or a tagged release can be used as the identifier. These development dependencies are installed by adding the `-d` or `--dev` flags to the `bpkg install` command.
+
+```json
+  "dependencies-dev": {
+    "term": "0.0.1"
+  }
+```
 
 ## Packaging best practices
 
