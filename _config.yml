@@ -44,6 +44,7 @@ exclude: [
   ".rvmrc",
   "bpkg.json",
   "changelog.md",
+  "docker-compose.yml",
   "Rakefile",
   "README.md"
 ]

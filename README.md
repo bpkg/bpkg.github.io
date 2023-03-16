@@ -21,6 +21,10 @@ In the remainder of this document, if there is a accompanying `bpkg` _command_ i
 
 > **BPKG:** `[COMMAND]`
 
+## Docker Environment
+
+This environment is not necessary to use if you'd rather run everything directly on your host system.  This environment is provided however, to facilitate all the required components for building and development of `bpkg` site.
+
 ## Dependencies
 
 This website was made with the [Jekyll][jekyll] engine, so it depends on a few
