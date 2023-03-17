@@ -9,7 +9,7 @@
     "post":           "rake post $@",
     "page":           "rake page $@",
 
-    "docker":         "docker-compose run --rm jekyll $@",
+    "docker":         "docker-compose run --rm --service-ports jekyll $@",
 
     "docker-shell":   "bpkg run docker /bin/bash",
     "docker-jekyll":  "bpkg run docker jekyll $@",
