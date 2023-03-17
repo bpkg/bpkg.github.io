@@ -39,7 +39,16 @@ highlighter : rouge # code highlighter
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /pkg/:title
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+exclude: [
+  ".rbenv-version",
+  ".rvmrc",
+  "bpkg.json",
+  "changelog.md",
+  "dev/",
+  "docker-compose.yml",
+  "Rakefile",
+  "README.md"
+]
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt

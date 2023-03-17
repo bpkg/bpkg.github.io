@@ -3,6 +3,7 @@
 
 _site/*
 _theme_packages/*
+.jekyll-cache/*
 
 Thumbs.db
 .DS_Store

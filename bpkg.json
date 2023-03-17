@@ -1,0 +1,25 @@
+{
+  "name": "bpkg/bpkg.github.io",
+  "description": "Homepage for the bpkg project ",
+  "commands": {
+    "create":         "mkdir .jekyll-cache; mkdir _site",
+    "build":          "jekyll build $@",
+    "clean":          "rm -Rf .jekyll-cache/* _site/*",
+    "preview":        "rake preview",
+    "post":           "rake post $@",
+    "page":           "rake page $@",
+
+    "docker":         "docker-compose run --rm --service-ports jekyll $@",
+
+    "docker-shell":   "bpkg run docker /bin/bash",
+    "docker-jekyll":  "bpkg run docker jekyll $@",
+    "docker-rake":    "bpkg run docker rake $@",
+    "docker-bpkg":    "bpkg run docker bpkg $@",
+
+    "docker-build":   "bpkg run docker-jekyll build $@",
+    "docker-clean":   "bpkg run docker-bpkg run clean",
+    "docker-preview": "bpkg run docker-rake preview",
+    "docker-post":    "bpkg run docker-rake post $@",
+    "docker-page":    "bpkg run docker-rake page $@"
+  }
+}
