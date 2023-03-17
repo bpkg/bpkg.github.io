@@ -16,8 +16,10 @@
     "docker-rake":    "bpkg run docker rake $@",
     "docker-bpkg":    "bpkg run docker bpkg $@",
 
-    "docker-build":   "bpkg run docker-bpkg rub build $@",
-    "docker-preview": "bpkg run docker-bpkg run preview",
-    "docker-clean":   "bpkg run docker-bpkg run clean"
+    "docker-build":   "bpkg run docker-jekyll build $@",
+    "docker-clean":   "bpkg run docker-bpkg run clean",
+    "docker-preview": "bpkg run docker-rake preview",
+    "docker-post":    "bpkg run docker-rake post $@",
+    "docker-page":    "bpkg run docker-rake page $@"
   }
 }

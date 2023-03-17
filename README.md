@@ -3,7 +3,7 @@
 `bpkg` is a lightweight bash package manager.
 This repository contains the source code of it's homepage.
 
-## Links:
+## Links
 
 * [`bpkg` homepage][home];
 * [`bpkg` source code on GitHub][hub];
@@ -23,7 +23,7 @@ In the remainder of this document, if there is a accompanying `bpkg` _command_ i
 
 ## Docker Environment
 
-This environment is not necessary to use if you'd rather run everything directly on your host system.  This environment is provided however, to facilitate all the required components for building and development of `bpkg` site.
+This environment is not necessary to use if you'd rather run everything directly on your host system.  This environment is provided however, to facilitate all the required components for building and development of `bpkg` site.  There are associated `bpkg` commands to interact with the Docker environment.
 
 ## Dependencies
 
@@ -50,7 +50,8 @@ of possible commands (thanks to [this great quickstart on Jekyll][tuto]):
 $ rake preview
 ```
 
-> **BPKG:** `preview`
+> **BPKG:** `preview`<br />
+> **BPKG:** `docker-preview`
 
 Builds the entire site to a local folder `_site` and launches a webserver to
 preview it.
@@ -66,7 +67,8 @@ automatically.
 $ rake post title="Hello, World!"
 ```
 
-> **BPKG:** `post title="Hello, World!"`
+> **BPKG:** `post title="Hello, World!"`<br />
+> **BPKG:** `docker-post title="Hello, World!"`
 
 Creates a new post. It will create a file `_posts/YYYY-MM-DD-title.md`, where
 the date is the current, by default.
@@ -80,7 +82,8 @@ site.
 $ rake page name="about"
 ```
 
-> **BPKG:** `page name="about"`
+> **BPKG:** `page name="about"`<br />
+> **BPKG:** `docker-page name="about"`
 
 Creates a new page. It will create the file `./about/index.html`.
 
@@ -88,7 +91,8 @@ Creates a new page. It will create the file `./about/index.html`.
 $ rake page name="about.html"
 ```
 
-> **BPKG:** `page name="about.html"`
+> **BPKG:** `page name="about.html"`<br />
+> **BPKG:** `docker-page name="about.html"`
 
 Alternative way to create a new page, on this case it will be `./about.html`.
 
@@ -117,4 +121,3 @@ This site uses [Jekyll Bootstrap][boots] with a heavily customized version of
 [boots]:   http://jekyllbootstrap.com/
 [theme]:   https://github.com/jekyllbootstrap/theme-the-program
 [saito]:   http://css.studiomohawk.com/
-
