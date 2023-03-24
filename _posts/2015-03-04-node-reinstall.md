@@ -29,7 +29,7 @@ Commands:
         node-reinstall --nave           re-install using nave
         node-reinstall --nvm            re-install using stable nvm - the default
         node-reinstall --nvm-latest     re-install using latest nvm - creationix/nvm:master
-        node-reinstall 0.12             specify a default node version - currently 
+        node-reinstall 0.12             specify a default node version - currently
 
 ```
 
