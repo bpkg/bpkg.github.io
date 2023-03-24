@@ -77,14 +77,14 @@ A _sample package information_ file would be like this:
     category: game
     tags: [fun, random, cute]
     ---
-	This package has a random outcome: it either erases your home directory or echoes a "fortune" (message-of-the-day).
-	## Usage
-	`fortune-fun`
-	...or for the bravest
-	`sudo fortune-fun`
-	## Links
-	* [Source Code (GitHub)][https://github.com/your/repository]
-	* [Author: Satan](http://your.homepage.com)
+  This package has a random outcome: it either erases your home directory or echoes a "fortune" (message-of-the-day).
+  ## Usage
+  `fortune-fun`
+  ...or for the bravest
+  `sudo fortune-fun`
+  ## Links
+  * [Source Code (GitHub)][https://github.com/your/repository]
+  * [Author: Satan](http://your.homepage.com)
 
 ## 4. Submit it to us
 

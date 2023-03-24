@@ -325,13 +325,13 @@ td {
 Base .mod module from http://j.mp/svs81k
 
 HTML should look like this and .bd is required:
-	<div class="mod">
-		<div class="inner">
-			<div class="hd"></div>
-			<div class="bd"></div>
-			<div class="ft"></div>
-		</div><!-- inner -->
-	</div><!-- mod -->
+  <div class="mod">
+    <div class="inner">
+      <div class="hd"></div>
+      <div class="bd"></div>
+      <div class="ft"></div>
+    </div><!-- inner -->
+  </div><!-- mod -->
 
 No styleguide reference.
 */
@@ -351,11 +351,11 @@ Since .media uses overflow: hidden, box-shadow needs padding to render correctly
 Using dropdown or pop over should be problematic. Anything try to go outside of this module box should have problem.
 HTML should look like this and .media-left or .media-right and .bd is required:
 
-	<div class="media">
-		<a href="#" class="media-left"><img src="#" alt=""></a>
-		<a href="#" class="media-right"><img src="#" alt=""></a>
-		<div class="bd"></div>
-	</div><!-- media -->
+  <div class="media">
+    <a href="#" class="media-left"><img src="#" alt=""></a>
+    <a href="#" class="media-right"><img src="#" alt=""></a>
+    <div class="bd"></div>
+  </div><!-- media -->
 
 No styleguide reference.
 */
@@ -383,9 +383,9 @@ No styleguide reference.
   zoom: 1;
 }
 /*
-Frameless			<http://framelessgrid.com/>
-by Joni Korpi 		<http://jonikorpi.com/>
-licensed under CC0	<http://creativecommons.org/publicdomain/zero/1.0/>
+Frameless      <http://framelessgrid.com/>
+by Joni Korpi     <http://jonikorpi.com/>
+licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
 
 No styleguide reference.
 */
@@ -936,19 +936,19 @@ pre {
   margin-top: 0;
 }
 /*
- 	IE
-*/
+ * IE
+ */
 /*
-	Smartphone
-*/
+ * Smartphone
+ */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   img {
     max-width: 100%;
   }
 }
 /*
-	Tablet
-*/
+ * Tablet
+ */
 @media only screen and (min-width: 768px) {
   .the-header .unit-head {
     padding: 0;
@@ -989,8 +989,8 @@ pre {
   }
 }
 /*
-	Not that old computer layout
-*/
+ * Not that old computer layout
+ */
 @media only screen and (min-width: 1280px) {
   .the-header .unit-head .nav-global .logo {
     border-bottom: 0 none;
@@ -1024,8 +1024,8 @@ pre {
   }
 }
 /*
-	Huge-screen layout
-*/
+ * Huge-screen layout
+ */
 @media only screen and (min-width: 1410px) {
   .the-header {
     float: left;

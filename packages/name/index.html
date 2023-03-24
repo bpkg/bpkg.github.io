@@ -8,10 +8,10 @@ group: navigation
 
 <table>
   <thead>
-	<tr>
-	  <th>package</th>
-	  <th>description</th>
-	</tr>
+    <tr>
+      <th>package</th>
+      <th>description</th>
+    </tr>
   </thead>
   <tbody>
 
@@ -19,13 +19,13 @@ group: navigation
   {% if package.title != null %}
     {% if group == null or group == package.group %}
       <tr>
-		<td>
-		  <a href="{{ BASE_PATH }}{{package.url}}">{{package.title}}</a>
-		</td>
-		<td>
-		  {{package.description}}
-		</td>
-	  </tr>
+        <td>
+          <a href="{{ BASE_PATH }}{{package.url}}">{{package.title}}</a>
+        </td>
+        <td>
+          {{package.description}}
+        </td>
+      </tr>
     {% endif %}
   {% endif %}
 {% endfor %}
