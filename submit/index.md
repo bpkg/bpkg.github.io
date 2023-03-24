@@ -62,8 +62,8 @@ You must provide at least the following:
 * **category**: Pick **one** of [all categories](/packages/category) that best suit your package.
 * **tags**: Several tags that give a clue on what your package is about. It must have `[this, format]`.
  [Here's a list of all tags](/packages/tag). You can create your own, although we encourage you to pick already-existing ones.
-* **source code link**: *Append a line* and put a link to the package's source code repository.
-* **author**: *Append another line* and place your name along with at least one contact info (homepage, email, twitter).
+* **source code link**: _Append a line_ and put a link to the package's source code repository.
+* **author**: _Append another line_ and place your name along with at least one contact info (homepage, email, twitter).
 
 **Note:** Don't change the other lines as it might break something.
 
@@ -77,14 +77,19 @@ A _sample package information_ file would be like this:
     category: game
     tags: [fun, random, cute]
     ---
-  This package has a random outcome: it either erases your home directory or echoes a "fortune" (message-of-the-day).
-  ## Usage
-  `fortune-fun`
-  ...or for the bravest
-  `sudo fortune-fun`
-  ## Links
-  * [Source Code (GitHub)][https://github.com/your/repository]
-  * [Author: Satan](http://your.homepage.com)
+
+    This package has a random outcome: it either erases your home directory or echoes a "fortune" (message-of-the-day).
+
+    ## Usage
+
+    `fortune-fun`
+    ...or for the bravest
+    `sudo fortune-fun`
+
+    ## Links
+
+    * [Source Code (GitHub)][https://github.com/your/repository]
+    * [Author: Satan](http://your.homepage.com)
 
 ## 4. Submit it to us
 

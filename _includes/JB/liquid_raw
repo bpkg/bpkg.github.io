@@ -1,4 +1,4 @@
-{% comment%}<!--
+{% comment %}<!--
 The liquid_raw helper is a way to display raw liquid code, as opposed to parsing it.
 Normally you'd use Liquid's built in 'raw' tag.
 The problem is GitHub Jekyll does not support the current Liquid release.
@@ -22,7 +22,7 @@ Usage:
   {% include JB/liquid_raw %}
 
   As seen here, you must use "|." and ".|" as opening and closing brackets.
--->{% endcomment%}
+-->{% endcomment %}
 
 {% if site.JB.liquid_raw.provider == "custom" %}
   {% include custom/liquid_raw %}

@@ -1,7 +1,8 @@
+{% comment %}<!--
+- Dynamically set liquid variables for working with URLs/paths
+-->{% endcomment %}
+
 {% capture jbcache %}
-  <!--
-  - Dynamically set liquid variables for working with URLs/paths
-  -->
   {% if site.JB.setup.provider == "custom" %}
     {% include custom/setup %}
   {% else %}
@@ -19,4 +20,5 @@
       {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ layout.theme.name }}{% endcapture %}
     {% endif %}
   {% endif %}
-{% endcapture %}{% assign jbcache = nil %}
+{% endcapture %}
+{% assign jbcache = nil %}
