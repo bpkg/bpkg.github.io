@@ -111,7 +111,7 @@ Alternative way to create a new page, on this case it will be `./about.html`.
 This site uses [Jekyll Bootstrap][boots] with a heavily customized version of
 [the_program][theme] theme, originally made by [Yuya Saito][saito].
 
-[home]:    http://bpkg.sh/
+[home]:    https://bpkg.sh/
 [hub]:     https://github.com/bpkg/bpkg
 [org]:     https://github.com/bpkg
 [jekyll]:  http://jekyllrb.com/
