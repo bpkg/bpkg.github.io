@@ -204,16 +204,18 @@
     -moz-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
     -o-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
     float: left;
-    width: 81%;
+    width: calc(~"81% - 1px");
     margin-right: -450px;
+    height: 100%;
     .unit-body {
       border-right: 1px solid rgba(0,0,0,0.2);
       -webkit-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       -moz-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       -o-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       margin-right: 450px;
-      padding: @line-height * 1px (@line-height * 2) * 1px;
-      min-height: 1050px;
+      @padding-top-bottom: (@line-height * 1px);
+      padding: @padding-top-bottom ((@line-height * 2) * 1px);
+      height: calc(~"100% -" @padding-top-bottom);
     }
   }
 

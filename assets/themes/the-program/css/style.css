@@ -39,6 +39,10 @@ Base from [HTML5 Boilerplate](http://j.mp/rP0wmY)
 
 No styleguide reference.
 */
+html,
+body {
+  height: 100%;
+}
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -383,8 +387,8 @@ No styleguide reference.
   zoom: 1;
 }
 /*
-Frameless      <http://framelessgrid.com/>
-by Joni Korpi     <http://jonikorpi.com/>
+Frameless           <http://framelessgrid.com/>
+by Joni Korpi       <http://jonikorpi.com/>
 licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
 
 No styleguide reference.
@@ -728,7 +732,6 @@ pre {
 .unit-article img {
   display: block;
   margin-left: auto;
-  margin-left: auto;
 }
 .unit-article img.left {
   margin-right: 16px;
@@ -1067,8 +1070,9 @@ pre {
     -moz-box-shadow: #ffffff 0px 0px 2px;
     -o-box-shadow: #ffffff 0px 0px 2px;
     float: left;
-    width: 81%;
+    width: calc(81% - 1px);
     margin-right: -450px;
+    height: 100%;
   }
   .body .unit-body {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -1077,7 +1081,7 @@ pre {
     -o-box-shadow: #ffffff 0px 0px 2px;
     margin-right: 450px;
     padding: 26px 52px;
-    min-height: 1050px;
+    height: calc(100% - 26px);
   }
   .the-footer {
     position: relative;
