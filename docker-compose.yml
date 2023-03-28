@@ -10,3 +10,7 @@ services:
       - "4000:4000"
     stdin_open: true
     tty: true
+  lessc:
+    image: finalgene/lessc
+    volumes:
+      - ./:/app

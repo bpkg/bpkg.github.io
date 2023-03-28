@@ -8,6 +8,7 @@
     "preview":        "rake preview",
     "post":           "rake post $@",
     "page":           "rake page $@",
+    "lessc":          "lessc ./assets/themes/the-program/css/style.less ./assets/themes/the-program/css/style.css",
 
     "docker":         "docker-compose run --rm --service-ports jekyll $@",
 
@@ -20,6 +21,8 @@
     "docker-clean":   "bpkg run docker-bpkg run clean",
     "docker-preview": "bpkg run docker-rake preview",
     "docker-post":    "bpkg run docker-rake post $@",
-    "docker-page":    "bpkg run docker-rake page $@"
+    "docker-page":    "bpkg run docker-rake page $@",
+
+    "docker-lessc":   "docker-compose run --rm lessc ./assets/themes/the-program/css/style.less ./assets/themes/the-program/css/style.css"
   }
 }
