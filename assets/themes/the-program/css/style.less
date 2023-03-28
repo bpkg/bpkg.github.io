@@ -192,10 +192,16 @@ pre {
       padding-top: (@line-height / @em);
       position: relative;
       nav ul {
+        display: inline-flex;
         list-style: none;
-        li { display: inline; }
+        width: 100%;
+        li {
+          text-align: center;
+          width: (100% / 3);
+          &.prev { text-align: left; }
+          &.next { text-align: right; }
+        }
       }
-      .gotop { margin-bottom: 0; }
     } // .article-inner .unit-foot
 
 } // .the-article

@@ -786,13 +786,19 @@ pre {
   position: relative;
 }
 .unit-article .unit-foot nav ul {
+  display: inline-flex;
   list-style: none;
+  width: 100%;
 }
 .unit-article .unit-foot nav ul li {
-  display: inline;
+  text-align: center;
+  width: 33.33333333%;
 }
-.unit-article .unit-foot .gotop {
-  margin-bottom: 0;
+.unit-article .unit-foot nav ul li.prev {
+  text-align: left;
+}
+.unit-article .unit-foot nav ul li.next {
+  text-align: right;
 }
 /* post & page */
 .layout-page .tag_box {
