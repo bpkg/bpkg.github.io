@@ -1,1 +1,57 @@
-Sorry this page does not exist =(
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>404 - Page Not Found - BPKG</title>
+    <style>
+      @font-face {
+        font-family: 'UbuntuMono-B';
+        src: url('/assets/themes/the-program/font/UbuntuMono-B-webfont.eot');
+        src: url('/assets/themes/the-program/font/UbuntuMono-B-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/assets/themes/the-program/font/UbuntuMono-B-webfont.woff') format('woff'),
+             url('/assets/themes/the-program/font/UbuntuMono-B-webfont.ttf') format('truetype'),
+             url('/assets/themes/the-program/font/UbuntuMono-B-webfont.svg#UbuntuMono-B') format('svg');
+        font-weight: normal !important;
+        font-style: normal;
+      }
+      html, body {
+        background: black;
+        height: 100%;
+        margin: 0;
+        color: rgba(255,255,255,0.75);
+        font-family: UbuntuMono-B;
+        font-size: 32px;
+        font-size: 3vw;
+      }
+      .center-middle {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+      }
+      p {
+        margin: 0;
+        text-align: center;
+        line-height: 3vi;
+      }
+      .sorry {
+        font-size: 2.25vw;
+      }
+      .pnf {
+        font-family: 'Courier New', Courier, monospace;
+      }
+      img {
+        filter: invert(75%);
+        height: 50vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-middle">
+      <p>
+        <img src="/assets/logo.svg" /><br />
+        <span class="sorry">Sorry this page does not exist =(</span><br />
+        <span class="pnf">404 - Page Not Found</span>
+      </p>
+    </div>
+  </body>
+</html>

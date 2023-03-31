@@ -7,7 +7,7 @@ closeSourceIssue: true
 # Lock the source issue after moving
 lockSourceIssue: false
 # Set custom aliases for targets
- aliases:
-   main: bpkg/bpkg
+  aliases:
+    main: bpkg/bpkg
 
 #EOF

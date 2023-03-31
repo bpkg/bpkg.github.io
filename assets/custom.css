@@ -3,89 +3,87 @@
 
 /* Subtitle for all posts (packages) */
 .entry-title {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .entry-subtitle {
-	font-size: 130%;
-	margin: 0;
-	padding: 0;
+  font-size: 130%;
+  margin: 0;
+  padding: 0;
 }
 
 hr {
-	border: 0;
-	height: 5px;
+  border: 0;
+  height: 5px;
 
-	color: #2D2D2D;
-	background-color: #2D2D2D;
+  color: #2D2D2D;
+  background-color: #2D2D2D;
 }
 
 /* Thing at the footer */
 footer #footer-licence {
-	font-size: 70%;
-	margin-top: 50px;
+  font-size: 70%;
+  margin-top: 50px;
 }
 
 /* make images look good on package pages */
 p img {
-	float   : right;
-	border  : 1px solid rgb(200, 200, 200);
-	padding : 5px;
+  float   : right;
+  border  : 1px solid rgb(200, 200, 200);
+  padding : 5px;
 }
 
 
 /* Styling all tables on the site */
 table {
-	border: none;
-	margin: 20px 0;
-	width: 100%;
+  border: none;
+  margin: 20px 0;
+  width: 100%;
 }
 
 th {
-	border-bottom  : solid 1px rgb(100, 100, 100);
-	font-weight    : bold;
-	padding        : 5px;
-	text-align     : center;
-	vertical-align : top;
+  border-bottom  : solid 1px rgb(100, 100, 100);
+  font-weight    : bold;
+  padding        : 5px;
+  text-align     : center;
+  vertical-align : top;
 }
 th:first-child {
-	border-right: solid 1px rgb(200, 200, 200);
+  border-right: solid 1px rgb(200, 200, 200);
 }
 
 td {
-	padding        : 3px 20px;
-	text-align     : left;
-	vertical-align : middle;
+  padding        : 3px 20px;
+  text-align     : left;
+  vertical-align : middle;
 }
 td:first-child {
-	text-align   : right;
-	border-right : solid 1px rgb(200, 200, 200);
+  text-align   : right;
+  border-right : solid 1px rgb(200, 200, 200);
 }
 
 tr:hover td {
-	background-color : rgb(220, 220, 220);
+  background-color : rgb(220, 220, 220);
 }
 
 
 /* the META part at the bottom of each package */
 .meta {
-	background-color : #393939;
-	color            : rgb(186, 186, 186);
-	padding          : 20px;
-	padding-bottom   : 1px;
-	text-align       : center;
-	margin-bottom    : 10px;
+  background-color : #393939;
+  color            : rgb(186, 186, 186);
+  padding          : 20px;
+  padding-bottom   : 1px;
+  text-align       : center;
+  margin-bottom    : 10px;
 }
 .meta .list-category a {
-	color : rgba(254, 121, 49, 1);
+  color : rgba(254, 121, 49, 1);
 }
 .meta .list-category a:hover {
-	color : white;
+  color : white;
 }
 .meta .list-tag a {
-	color : rgba(54, 254, 49, 1);
+  color : rgba(54, 254, 49, 1);
 }
 .meta .list-tag a:hover {
-	color: white;
+  color: white;
 }
-
-
