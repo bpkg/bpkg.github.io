@@ -40,12 +40,14 @@ Base from [HTML5 Boilerplate](http://j.mp/rP0wmY)
 No styleguide reference.
 */
 html {
+  height: 100%;
   font-size: 100%;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 body {
+  height: 100%;
   margin: 0;
   font-size: 1em;
   line-height: 1.4;
