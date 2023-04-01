@@ -556,6 +556,7 @@ html {
   background-repeat: repeat;
   background-position: 0 0;
   background-color: #e2e2de;
+  height: 100%;
 }
 .body .unit-body {
   background-color: #fafafa;
