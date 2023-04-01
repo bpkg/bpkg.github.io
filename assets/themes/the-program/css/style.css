@@ -39,10 +39,6 @@ Base from [HTML5 Boilerplate](http://j.mp/rP0wmY)
 
 No styleguide reference.
 */
-html,
-body {
-  height: 100%;
-}
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -1088,7 +1084,7 @@ pre {
     -o-box-shadow: #ffffff 0px 0px 2px;
     margin-right: 450px;
     padding: 26px 52px;
-    height: calc(100% - 26px);
+    height: calc(100% - 52px);
   }
   .the-footer {
     position: relative;
