@@ -22,7 +22,7 @@ If you don't have a github account yet, you will need to create one.
 The following commands will download our website under a directory called `bpkg.github.io` and then navigate to it.
 
 {% highlight bash %}
-$ git clone http://github.com/bpkg/bpkg.github.io
+$ git clone https://github.com/bpkg/bpkg.github.io
 $ cd bpkg.github.io
 {% endhighlight %}
 
@@ -89,7 +89,7 @@ A _sample package information_ file would be like this:
     ## Links
 
     * [Source Code (GitHub)][https://github.com/your/repository]
-    * [Author: Satan](http://your.homepage.com)
+    * [Author: Satan](https://your.homepage.com)
 
 ## 4. Submit it to us
 

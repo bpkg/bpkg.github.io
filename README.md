@@ -114,10 +114,10 @@ This site uses [Jekyll Bootstrap][boots] with a heavily customized version of
 [home]:    https://bpkg.sh/
 [hub]:     https://github.com/bpkg/bpkg
 [org]:     https://github.com/bpkg
-[jekyll]:  http://jekyllrb.com/
+[jekyll]:  https://jekyllrb.com/
 [tuto]:    http://jekyllbootstrap.com/usage/jekyll-quick-start.html
-[posts]:   http://jekyllrb.com/docs/posts/
+[posts]:   https://jekyllrb.com/docs/posts/
 [intro]:   http://jekyllbootstrap.com/lessons/jekyll-introduction.html
 [boots]:   http://jekyllbootstrap.com/
 [theme]:   https://github.com/jekyllbootstrap/theme-the-program
-[saito]:   http://css.studiomohawk.com/
+[saito]:   https://studiomohawk.com/
