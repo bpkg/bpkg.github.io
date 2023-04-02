@@ -213,9 +213,9 @@
       -moz-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       -o-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       margin-right: 450px;
-      @padding-top-bottom: (@line-height * 1px);
-      padding: @padding-top-bottom ((@line-height * 2) * 1px);
-      height: calc(~"100% -" @padding-top-bottom);
+      padding: (@line-height * 1px) ((@line-height * 2) * 1px);
+      @padding-vertical: ((@line-height * 1px) * 2);
+      height: calc(~"100% -" @padding-vertical);
     }
   }
 
