@@ -10,6 +10,11 @@
     "page":           "rake page $@",
     "lessc":          "lessc ./assets/themes/the-program/css/style.less ./assets/themes/the-program/css/style.css",
 
+    "site-crawl":     "docker-compose run --rm --service-ports sitediff crawl --directory=./ ./config.yaml",
+    "site-diff":      "docker-compose run --rm --service-ports sitediff diff --directory=./ ./config.yaml",
+    "site-serve":     "docker-compose run --rm --service-ports sitediff serve --directory=./ ./config.yaml",
+    "sitediff":       "bpkg run site-crawl; bpkg run site-diff; bpkg run site-serve",
+
     "docker":         "docker-compose run --rm --service-ports jekyll $@",
 
     "docker-shell":   "bpkg run docker /bin/bash",

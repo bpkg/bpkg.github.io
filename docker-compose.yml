@@ -3,14 +3,27 @@ version: "3"
 services:
   jekyll:
     build:
-      context: ./dev/
+      context: ./dev/jekyll/
     volumes:
       - ./:/srv/jekyll:Z
     ports:
       - "4000:4000"
     stdin_open: true
     tty: true
+
   lessc:
     image: finalgene/lessc
     volumes:
       - ./:/app
+
+  sitediff:
+    image: evolvingweb/sitediff
+    volumes:
+      - ./dev/sitediff:/sitediff
+    # network_mode: host
+    ports:
+      - "13080:13080"
+    stdin_open: true
+    tty: true
+    entrypoint: sitediff
+    command: help
