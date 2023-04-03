@@ -1,0 +1,85 @@
+## Documentation:
+## https://github.com/evolvingweb/sitediff
+
+## Include other configuration files, merging them with this file.
+includes:
+  # - extra-rules.yaml
+
+## Settings.
+##
+## If you use "sitediff init" with the right parameters, it will generate
+## this section for you.
+settings:
+  ## Crawl 4 levels deep.
+  depth: 4
+
+  ## Wait for 250ms between requests.
+  # interval: 250
+
+  ## Make only 1 request at a time - no simultaneous requests.
+  ## Concurrency has to be one when an interval is set.
+  # concurrency: 1
+
+  ## Don't follow links to XML files.
+  exclude: !ruby/regexp /^\/feed\//
+
+  ## Curl options, if any.
+  curl_opts:
+    # max_recv_speed_large: 10000
+
+## Rules under this element apply only to the 'before' site.
+before:
+  ## URL of the 'before' version of the site.
+  url: https://bpkg.sh
+
+  ## Sanitizations and DOM transformations, just like the general ones
+  ## demonstrated below, but applied only to the 'before' site.
+  sanitization:
+    - title: Remove Google analytics script (added in production)
+      pattern: !ruby/regexp /\n[ \t]*<script[^<]+\.google-analytics\.com\/ga\.js[^<]+<\/script>[ \t]*/
+
+  dom_transform:
+
+## Rules under this element apply only to the 'after' site.
+after:
+  ## URL of the 'after' version of the site.
+  url: http://host.docker.internal:4000
+
+  ## Sanitizations and DOM transformations, just like the general ones
+  ## demonstrated below, but applied only to the 'after' site.
+  sanitization:
+    - title: Remove JavaScript development variable (added in development)
+      pattern: !ruby/regexp /\n[ \t]*var disqus_developer = 1;/
+
+  dom_transform:
+
+## The root element to compare.
+##
+## Usually, sitediff compares the HTML of the entire page. If you'd rather
+## check just a subset of the page, specify a selector here. For example, the
+## line below causes only the body to be compared, ignoring the HTML head.
+# selector: 'body'
+
+## Ignore whitespace when doing the diff.
+# ignore_whitespace: true
+
+## General regular expression rules, applied to both versions of the site.
+sanitization:
+  - title: Remove timezone offset from publish date-time (can differ from local and production)
+    selector: date.date-pub
+    pattern: !ruby/regexp /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}).\d{2}:\d{2}/
+    substitute: '\1_TZ_OFFSET_'
+
+## General DOM transforms, applied to both versions of the site.
+dom_transform:
+
+## Report settings allow you to display helpful details on the report.
+report:
+  title: BPKG Packages Site - for the bpkg project
+  details: This report outlines visual differences between the published (production) version and the locally generated version.
+  before_note: Production Site
+  after_note: Locally Generated
+  # before_url_report: https://bpkg.sh
+  # after_url_report: http://localhost:13080/cache/after
+  # before_url_report: false
+  after_url_report: http://localhost:4000
