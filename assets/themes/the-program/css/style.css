@@ -781,6 +781,7 @@ pre {
 }
 .unit-article .unit-foot {
   border-top: 5px solid rgba(21, 25, 25, 0.8);
+  margin-top: 1.625em;
   padding-top: 1.625em;
   position: relative;
 }
