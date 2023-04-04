@@ -87,3 +87,15 @@ tr:hover td {
 .meta .list-tag a:hover {
   color: white;
 }
+
+.columns {
+  column-width: 20em;
+}
+.columns-grouping {
+  margin-bottom: 2em;
+  orphans: 4;
+}
+.columns-grouping-heading {
+  column-span: all;
+  margin-bottom: 0.25em;
+}
