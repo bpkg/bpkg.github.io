@@ -20,7 +20,7 @@ canvas,
 video {
   display: inline-block;
   *display: inline;
-  *zoom: 1;
+  transform: scale(1);
 }
 audio:not([controls]) {
   display: none;
@@ -346,7 +346,7 @@ No styleguide reference.
 .mod .hd {
   overflow: hidden;
   *overflow: visible;
-  zoom: 1;
+  transform: scale(1);
 }
 /*
 .media module from http://j.mp/tQCTa8
@@ -365,7 +365,7 @@ No styleguide reference.
 .media {
   overflow: hidden;
   *overflow: visible;
-  zoom: 1;
+  transform: scale(1);
 }
 .media .media-left {
   float: left;
@@ -383,7 +383,7 @@ No styleguide reference.
 .media .hd {
   overflow: hidden;
   *overflow: visible;
-  zoom: 1;
+  transform: scale(1);
 }
 /*
 Frameless           <http://framelessgrid.com/>
@@ -533,7 +533,7 @@ No styleguide reference.
 .list-linear li {
   display: inline-block;
   *display: inline;
-  zoom: 1;
+  transform: scale(1);
   line-height: normal;
   letter-spacing: normal;
   margin-right: 16px;
@@ -1482,7 +1482,7 @@ hr {
 .unit-inner,
 .tag_box,
 #page {
-  *zoom: 1;
+  transform: scale(1);
 }
 .left {
   *display: inline;
