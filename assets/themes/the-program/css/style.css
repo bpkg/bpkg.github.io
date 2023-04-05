@@ -1073,9 +1073,6 @@ pre {
   }
   .body {
     border-left: 1px solid rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: #ffffff 0px 0px 2px;
-    -moz-box-shadow: #ffffff 0px 0px 2px;
-    -o-box-shadow: #ffffff 0px 0px 2px;
     float: left;
     width: calc(81% - 1px);
     margin-right: -450px;
