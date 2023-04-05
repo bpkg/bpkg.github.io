@@ -40,6 +40,7 @@ Base from [HTML5 Boilerplate](http://j.mp/rP0wmY)
 No styleguide reference.
 */
 html {
+  height: 100%;
   font-size: 100%;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
@@ -1079,6 +1080,7 @@ pre {
     width: calc(81% - 1px);
     margin-right: -450px;
     min-height: 100%;
+    height: 100%;
   }
   .body .unit-body {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -1088,6 +1090,7 @@ pre {
     margin-right: 450px;
     padding: 26px 52px;
     min-height: calc(100% - 52px);
+    height: calc(100% - 52px);
   }
   .the-footer {
     position: relative;
