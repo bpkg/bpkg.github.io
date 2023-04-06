@@ -1,0 +1,20 @@
+---
+title : JavaScript Search
+permalink : '/feed/search.json'
+---
+
+{
+  "generated": "{{ site.time | date_to_xmlschema }}",
+  "posts": [
+    {% for post in site.posts %}{
+      "title": "{{ post.title }}",
+      "date": "{{ post.date | date: '%Y-%m-%d' }}",
+      "author": "{{ post.author }}",
+      "description": "{{ post.description }}",
+      "category": "{{ post.category }}",
+      "tags": {{ post.tags | jsonify }},
+      "url": "{{ site.production_url }}{{ post.url }}"
+    }{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  ]
+}
