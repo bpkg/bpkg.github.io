@@ -51,14 +51,13 @@ exclude: [
 ]
 
 # The production_url is only used when full-domain names are needed
-# such as sitemap.txt
+# such as sitemap.txt, atom.xml, rss.xml, search.json
 # Most places will/should use BASE_PATH to make the urls
 #
 # If you have set a CNAME (pages.github.com) set your custom domain here.
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
-#
-production_url : https://bpkg.sh/
+production_url : https://bpkg.sh
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Jekyll-Bootstrap specific configurations
@@ -108,7 +107,7 @@ JB :
   archive_path    : /archive/index.html
   categories_path : /packages/category
   tags_path       : /packages/tag/
-  atom_path       : /feed/atom.xml
+  ato_path        : /feed/atom.xml
   rss_path        : /feed/rss.xml
 
   # Settings for comments helper
