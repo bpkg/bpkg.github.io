@@ -20,7 +20,7 @@ canvas,
 video {
   display: inline-block;
   *display: inline;
-  *zoom: 1;
+  transform: scale(1);
 }
 audio:not([controls]) {
   display: none;
@@ -40,6 +40,7 @@ Base from [HTML5 Boilerplate](http://j.mp/rP0wmY)
 No styleguide reference.
 */
 html {
+  height: 100%;
   font-size: 100%;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
@@ -270,6 +271,8 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
   *overflow: visible;
 }
 /*
@@ -282,12 +285,16 @@ input[type="radio"] {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
+  -moz-appearance: textfield;
+  appearance: textfield;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 /*
  * Remove inner padding and border in FF3/4: h5bp.com/l
@@ -345,7 +352,7 @@ No styleguide reference.
 .mod .hd {
   overflow: hidden;
   *overflow: visible;
-  zoom: 1;
+  transform: scale(1);
 }
 /*
 .media module from http://j.mp/tQCTa8
@@ -364,7 +371,7 @@ No styleguide reference.
 .media {
   overflow: hidden;
   *overflow: visible;
-  zoom: 1;
+  transform: scale(1);
 }
 .media .media-left {
   float: left;
@@ -382,7 +389,7 @@ No styleguide reference.
 .media .hd {
   overflow: hidden;
   *overflow: visible;
-  zoom: 1;
+  transform: scale(1);
 }
 /*
 Frameless           <http://framelessgrid.com/>
@@ -532,7 +539,7 @@ No styleguide reference.
 .list-linear li {
   display: inline-block;
   *display: inline;
-  zoom: 1;
+  transform: scale(1);
   line-height: normal;
   letter-spacing: normal;
   margin-right: 16px;
@@ -781,6 +788,7 @@ pre {
 }
 .unit-article .unit-foot {
   border-top: 5px solid rgba(21, 25, 25, 0.8);
+  margin-top: 1.625em;
   padding-top: 1.625em;
   position: relative;
 }
@@ -807,8 +815,8 @@ pre {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.4);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -828,8 +836,8 @@ pre {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin: 5px;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -837,8 +845,10 @@ pre {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
   -webkit-user-select: none;
+  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -1071,22 +1081,22 @@ pre {
   }
   .body {
     border-left: 1px solid rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: #ffffff 0px 0px 2px;
-    -moz-box-shadow: #ffffff 0px 0px 2px;
-    -o-box-shadow: #ffffff 0px 0px 2px;
     float: left;
     width: calc(81% - 1px);
     margin-right: -450px;
     min-height: 100%;
+    height: 100%;
   }
   .body .unit-body {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: #ffffff 0px 0px 2px;
     -moz-box-shadow: #ffffff 0px 0px 2px;
     -o-box-shadow: #ffffff 0px 0px 2px;
+    box-shadow: #ffffff 0px 0px 2px;
     margin-right: 450px;
     padding: 26px 52px;
     min-height: calc(100% - 52px);
+    height: calc(100% - 52px);
   }
   .the-footer {
     position: relative;
@@ -1481,7 +1491,7 @@ hr {
 .unit-inner,
 .tag_box,
 #page {
-  *zoom: 1;
+  transform: scale(1);
 }
 .left {
   *display: inline;

@@ -5,7 +5,7 @@ No styleguide reference.
 */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio, canvas, video { display: inline-block; *display: inline; transform: scale(1); }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
@@ -21,7 +21,7 @@ Base from [HTML5 Boilerplate](http://j.mp/rP0wmY)
 No styleguide reference.
 */
 
-html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { height: 100%; font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { min-height: 100%; height: 100%; margin: 0; font-size: 1em; line-height: 1.4; -webkit-tap-highlight-color: rgba(255,0,0, 0.62); }
 body, button, input, select, textarea { font-family: sans-serif; }
 ::-moz-selection { background: #073642; color: #fff; text-shadow: none; }
@@ -123,13 +123,13 @@ button, input { line-height: normal; }
  * 2. Allow styling of clickable form elements in iOS
  * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
  */
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; -moz-appearance: button; appearance: button; *overflow: visible; }
 /*
  * Consistent box sizing and appearance
  */
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+input[type="search"] { -webkit-appearance: textfield; -moz-appearance: textfield; appearance: textfield; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
 /*
  * Remove inner padding and border in FF3/4: h5bp.com/l
  */
