@@ -200,22 +200,22 @@
 
   .body {
     border-left: 1px solid rgba(0,0,0,0.2);
-    -webkit-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
-    -moz-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
-    -o-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
     float: left;
     width: calc(~"81% - 1px");
     margin-right: -450px;
     min-height: 100%;
+    height: 100%;
     .unit-body {
       border-right: 1px solid rgba(0,0,0,0.2);
       -webkit-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       -moz-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       -o-box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
+      box-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
       margin-right: 450px;
       padding: (@line-height * 1px) ((@line-height * 2) * 1px);
       @padding-vertical: ((@line-height * 1px) * 2);
       min-height: calc(~"100% -" @padding-vertical);
+      height: calc(~"100% -" @padding-vertical);
     }
   }
 

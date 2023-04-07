@@ -4,14 +4,15 @@ title:  Packages by Category
 header: Packages by Category
 group:  navigation
 ---
+
 {% include JB/setup %}
 
 <!-- Top box with all categories as buttons -->
 <ul class="tag_box inline">
   {% comment %}<!--
-This creates a list of categories, with links pointing
-to internal things on the page.
--->{% endcomment %}
+  This creates a list of categories, with links pointing
+  to internal things on the page.
+  -->{% endcomment %}
   {% assign categories_list = site.categories %}
 
   {% if categories_list.first[0] == null %}
@@ -29,12 +30,15 @@ to internal things on the page.
   {% endif %}
 </ul>
 
-
 <!-- List with all categories and their respective packages -->
-{% for category in site.categories %}
-  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
-  <ul>
-    {% assign pages_list = category[1] %}
-    {% include JB/pages_list %}
-  </ul>
-{% endfor %}
+<div class="columns">
+  {% for category in site.categories %}
+    <div class="columns-grouping">
+      <h2 class="columns-grouping-heading" id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
+      <ul>
+        {% assign pages_list = category[1] %}
+        {% include JB/pages_list %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
