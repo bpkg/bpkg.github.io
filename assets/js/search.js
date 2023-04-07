@@ -1,4 +1,4 @@
-class packageData {
+class PackageData {
   title;
   date;
   author;
@@ -8,13 +8,13 @@ class packageData {
   url;
 
   constructor(data) {
-    this.title =       data.title;
-    this.date =        data.date;
-    this.author =      data.author;
+    this.title       = data.title;
+    this.date        = data.date;
+    this.author      = data.author;
     this.description = data.description;
-    this.category =    data.category;
-    this.tags =        data.tags;
-    this.url =         data.url;
+    this.category    = data.category;
+    this.tags        = data.tags;
+    this.url         = data.url;
   }
 }
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     .then((response) => response.json())
     .then((data_server) => {
       generated = data_server.generated;
-      data = data_server.posts.map(post => new packageData(post));
+      data = data_server.posts.map(post => new PackageData(post));
     });
 
   search.addEventListener('input', (event) => {
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
       results.appendChild(li);
     }
 
-    result.forEach((e) => {
+    result.forEach((package) => {
       const li = document.createElement('li');
-      li.innerHTML = `<a href="${e.url}">${e.title}</a>`;
+      li.innerHTML = `<a href="${package.url}">${package.title}</a>`;
       results.appendChild(li);
     });
   };

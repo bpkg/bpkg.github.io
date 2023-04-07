@@ -107,7 +107,7 @@ JB :
   archive_path    : /archive/index.html
   categories_path : /packages/category
   tags_path       : /packages/tag/
-  ato_path        : /feed/atom.xml
+  atom_path       : /feed/atom.xml
   rss_path        : /feed/rss.xml
 
   # Settings for comments helper
