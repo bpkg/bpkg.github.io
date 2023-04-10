@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   let data = [];
   let search_term = '';
 
-  fetch('/feed/search.json')
+  fetch('/feed/packages.json')
     .then((response) => response.json())
     .then((data_server) => {
       generated = data_server.generated;
