@@ -10,7 +10,14 @@ permalink: /search/
 
 <div>
   <input id="search" type="search" autofocus autocomplete="off" placeholder="Search for packages" />
-  <ul id="results">
-  </ul>
+  <div id="results"></div>
 </div>
-<script type="text/javascript" src="{{ BASE_PATH }}/assets/js/search.js" defer></script>
+<script type="module">
+  import { PackageSearch } from "{{ BASE_PATH }}/assets/js/module/search.mjs";
+  new PackageSearch({
+    feed: '{{ site.JB.json_path }}',
+    queryField: document.getElementById('search'),
+    searchDelay: 500,
+    resultsField: document.getElementById('results'),
+  }).initialize();
+</script>
