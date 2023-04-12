@@ -10,12 +10,29 @@ permalink: /search/
 
 <div>
   <input id="search" type="search" autofocus autocomplete="off" placeholder="Search for packages" />
-  <div id="results"></div>
+  <div id="results">
+    <div class="noResults">
+      <p>Provide a search query to find packages.</p>
+      <img src="/assets/logo.svg" />
+    </div>
+  </div>
 </div>
+<template id="result-item">
+  <div class="result">
+    <a href="${data.url}">
+      <p class="result-title">${data.title}</p>
+      <p class="result-description">${data.description}</p>
+    </a>
+  </div>
+</template>
 <script type="module">
   import { PackageSearch } from "{{ BASE_PATH }}/assets/js/module/search.mjs";
   new PackageSearch({
     feed: '{{ site.JB.json_path }}',
+    templates: {
+      noResults: '# No Results found.',
+      result: document.getElementById('result-item'),
+    },
     queryField: document.getElementById('search'),
     searchDelay: 500,
     resultsField: document.getElementById('results'),

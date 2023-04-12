@@ -22,15 +22,14 @@ export class PackageData {
 
 export class PackageSearch {
   _feed;
+  _templates = {};
   _queryField;
   _searchDelay = 1000;
   _resultsField;
   _packages;
 
   constructor(options) {
-    if (options instanceof Object) {
-      this.options = options;
-    }
+    if (options instanceof Object) this.options = options;
   }
 
   set options(options) {
@@ -39,6 +38,7 @@ export class PackageSearch {
 
     [
       'feed',
+      'templates',
       'queryField',
       'searchDelay',
       'resultsField',
@@ -51,6 +51,7 @@ export class PackageSearch {
   get options() {
     let options = {
       feed: this.feed,
+      templates: this.templates,
       queryField: this.queryField,
       searchDelay: this.searchDelay,
       resultsField: this.resultsField,
@@ -70,6 +71,33 @@ export class PackageSearch {
 
   get feed() {
     return this._feed;
+  }
+
+  set templates(templates) {
+    if (! templates instanceof Object)
+      throw new TypeError("Valid templates object not provided");
+
+    [
+      'noQuery',
+      'noResults',
+      'result',
+    ].forEach(template => {
+      if (templates.hasOwnProperty(template)) {
+        let tag = templates[template];
+
+        if (typeof tag == 'string') {
+          tag = document.createElement('template');
+          tag.innerHTML = templates[template];
+        }
+
+        if (tag instanceof Element)
+          this._templates[template] = tag;
+      }
+    });
+  }
+
+  get templates() {
+    return this._templates;
   }
 
   set queryField(element) {
@@ -129,8 +157,21 @@ export class PackageSearch {
     if (! this.isSetup())
       throw new Error('Search is not setup correctly prior to initialization');
 
+    this._initializeTemplates();
     this._initializeQueryField();
     this._initializeResultsField();
+  }
+
+  _initializeTemplates() {
+    if (this.templates.noQuery === undefined)
+      this.templates = { noQuery: this.resultsField.innerHTML === '' ?
+        'No query provided.' :
+        this.resultsField.innerHTML
+      };
+    if (this.templates.noResults === undefined)
+      this.templates = { noResults: 'Zero results found.' };
+    if (this.templates.result === undefined)
+      this.templates = { result: '<a href="${data.item.url}">${data.item.title}</a>' };
   }
 
   _initializeQueryField() {
@@ -177,6 +218,19 @@ export class PackageSearch {
     console.log('Fetching search feed');
   }
 
+  _getStringFromTemplate(template, data) {
+    if (! this.templates.hasOwnProperty(template))
+      throw new Error("Valid search template not provided" + template);
+    else if (! data instanceof Object)
+      throw new TypeError("Valid result object not provided: " + (typeof data));
+
+    try {
+      return eval("`" + this.templates[template].innerHTML + "`");
+    } catch (error) {
+      console.log('Issue with configured template (' + template + '): ' + this.templates[template].innerHTML, data);
+    }
+  }
+
   _search(query) {
     this.resultsField.innerHTML = '';
 
@@ -193,9 +247,9 @@ export class PackageSearch {
   }
 
   _setNoResults() {
-    this.resultsField.innerHTML = this.queryField.value.trim() === '' ?
-      'No query provided' :
-      'Zero results found';
+    this.resultsField.innerHTML = this._getStringFromTemplate(
+      this.queryField.value.trim() === '' ? 'noQuery' : 'noResults'
+    );
   }
 
   _showResults(results) {
@@ -206,7 +260,7 @@ export class PackageSearch {
 
       results.forEach(result => {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${result.url}">${result.title}</a>`;
+        li.innerHTML = this._getStringFromTemplate('result', result);
 
         ul.appendChild(li);
       });

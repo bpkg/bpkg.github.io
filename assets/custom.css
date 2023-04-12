@@ -99,3 +99,39 @@ tr:hover td {
   column-span: all;
   margin-bottom: 0.25em;
 }
+
+#search + #results {
+  margin-top: 1em;
+}
+#search + #results .noResults img {
+  margin: 0 auto;
+  width: 10vw;
+}
+#search + #results li {
+  list-style-type: none;
+}
+#search + #results li .result {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+#search + #results li:first-child .result {
+  border-top: 0;
+}
+#search + #results .result {
+  font-size: 0.7em;
+  line-height: 1.5em;
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+}
+#search + #results .result a {
+  text-decoration: none;
+}
+#search + #results .result p {
+  margin: 0;
+}
+#search + #results .result .result-title {
+  font-size: 1.25em;
+  line-height: 2em;
+}
+#search + #results .result label {
+  font-weight: bolder;
+}
