@@ -19,9 +19,16 @@ permalink: /search/
 </div>
 <template id="result-item">
   <div class="result">
-    <a href="${data.url}">
-      <p class="result-title">${data.title}</p>
-      <p class="result-description">${data.description}</p>
+    <a href="${data.item.url}">
+      <p class="result-title">${data.highlight.title}</p>
+      <p class="result-description">${data.highlight.description}</p>
+      ${data.item.repository == '' ? '' : '<p><span class="result-repository"><label>Repository:</label> ' + data.highlight.repository + '</span></p>'}
+      <p>
+        <span class="result-author">${data.item.author == '' ? '' : '<label>Author:</label> '}${data.highlight.author}</span>
+        <span class="result-date"><label>Date:</label> ${data.highlight.date}</span>
+        <span class="result-category"><label>Category:</label> ${data.highlight.category}</span>
+        <span class="result-tags"><label>Tags:</label> ${data.highlight.tags.join(' | ')}</span>
+      </p>
     </a>
   </div>
 </template>
@@ -34,7 +41,7 @@ permalink: /search/
       result: document.getElementById('result-item'),
     },
     queryField: document.getElementById('search'),
-    searchDelay: 500,
+    searchDelay: 250,
     resultsField: document.getElementById('results'),
   }).initialize();
 </script>

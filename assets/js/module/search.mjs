@@ -1,3 +1,6 @@
+// https://github.com/krisk/Fuse
+import { default as Fuse } from '//cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.min.js'
+
 export class PackageData {
   title;
   date;
@@ -24,9 +27,27 @@ export class PackageSearch {
   _feed;
   _templates = {};
   _queryField;
-  _searchDelay = 1000;
+  _searchDelay = 500;
   _resultsField;
+
   _packages;
+  _fuse;
+
+  _fuseOptions = {
+    includeScore: true,
+    includeMatches: true,
+    findAllMatches: true,
+    useExtendedSearch: true,
+    keys: [
+      {weight: 2.0, name: 'title'},
+      {weight: 0.5, name: 'date'},
+      {weight: 1.0, name: 'author'},
+      {weight: 1.5, name: 'description'},
+      {weight: 0.5, name: 'category'},
+      {weight: 0.5, name: 'tags'},
+      {weight: 0.1, name: 'repository'},
+    ],
+  };
 
   constructor(options) {
     if (options instanceof Object) this.options = options;
@@ -141,10 +162,30 @@ export class PackageSearch {
       generated: new Date(packages.generated),
       items: packages.posts.map(item => new PackageData(item)),
     };
+
+    this.fuse = this._packages.items;
   }
 
   get packages() {
     return this._packages;
+  }
+
+  set fuse(items) {
+    if (! items instanceof Array)
+      throw new TypeError("Valid fuse set not provided");
+
+      this._fuse = new Fuse(
+        items,
+        this._fuseOptions,
+        Fuse.createIndex(
+          this._fuseOptions.keys,
+          items
+        )
+      );
+    }
+
+  get fuse() {
+    return this._fuse;
   }
 
   isSetup() {
@@ -220,30 +261,65 @@ export class PackageSearch {
 
   _getStringFromTemplate(template, data) {
     if (! this.templates.hasOwnProperty(template))
-      throw new Error("Valid search template not provided" + template);
+      throw new Error('Valid search template not provided: ' + template);
     else if (! data instanceof Object)
-      throw new TypeError("Valid result object not provided: " + (typeof data));
+      throw new TypeError('Valid result object not provided: ' + typeof data);
 
     try {
-      return eval("`" + this.templates[template].innerHTML + "`");
+      return eval('`' + this.templates[template].innerHTML + '`');
     } catch (error) {
       console.log('Issue with configured template (' + template + '): ' + this.templates[template].innerHTML, data);
     }
   }
 
   _search(query) {
-    this.resultsField.innerHTML = '';
-
-    let results;
-
-    if (query.trim().length !== 0) {
-      const match = new RegExp(`${query.trim()}`, 'gi');
-      results = this._packages.items.filter(
-        packageItem => match.test(packageItem.title)
+    this._showResults(
+      this._highlightResults(
+        this.fuse.search(query)
       )
+    );
+  }
+
+  _highlightResults(results) {
+    if (this._fuseOptions.hasOwnProperty('includeMatches') && this._fuseOptions.includeMatches) {
+      results = results.map(result => {
+        // Deep copy
+        let highlight = JSON.parse(JSON.stringify(result.item));
+
+        result.matches.forEach(match => {
+          if (match.key === 'tags') {
+            highlight.tags[match.refIndex] = this._highlightString(match.value, match.indices);
+          } else if (highlight.hasOwnProperty(match.key)) {
+            highlight[match.key] = this._highlightString(match.value, match.indices);
+          }
+        });
+
+        result.highlight = highlight;
+        return result;
+      });
     }
 
-    this._showResults(results);
+    return results;
+  }
+
+  _highlightString(string, indices) {
+    let markers = [];
+
+    indices.forEach(index => {
+      markers.push([index[0], true]);
+      markers.push([index[1], false]);
+    });
+
+    string = string.split('');
+    let match = 0;
+
+    markers.forEach(mark => {
+      string[mark[0]] = mark[1] ?
+        '<span class="highlight match-group-' + (match++ % 14) + '">' + string[mark[0]] :
+        string[mark[0]] + '</span>';
+    });
+
+    return string.join('');
   }
 
   _setNoResults() {

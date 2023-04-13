@@ -14,7 +14,7 @@ permalink : '/feed/packages.json'
       "category":"{{ post.category }}",
       "tags":{{ post.tags | jsonify }},
       "repository":"{{ post.repository }}",
-      "url":"{{ site.production_url }}{{ post.url }}"
+      "url":"{{ post.url }}"
     }{% if forloop.last == false %},
     {% else %}{% endif %}{% endfor %}
   ]
