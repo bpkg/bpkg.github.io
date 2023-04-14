@@ -36,6 +36,9 @@ permalink: /search/
   import { PackageSearch } from "{{ BASE_PATH }}/assets/js/module/search.mjs";
   new PackageSearch({
     feed: '{{ site.JB.json_path }}',
+    hotkeys: {
+      search: 'ctrl+s, control+s, s, /',
+    },
     templates: {
       noResults: '# No Results found.',
       result: document.getElementById('result-item'),

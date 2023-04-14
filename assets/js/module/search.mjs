@@ -1,3 +1,5 @@
+// https://github.com/jaywcjlove/hotkeys
+import { default as hotkeys } from "//unpkg.com/hotkeys-js@3.10.2/dist/hotkeys.esm.js";
 // https://github.com/krisk/Fuse
 import { default as Fuse } from '//cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.min.js'
 
@@ -49,6 +51,16 @@ export class PackageSearch {
     ],
   };
 
+  _hotkeys = {
+    enabled: true,
+    search: '/',
+    resultPrevious: 'up',
+    resultNext: 'down',
+    resultSelect: 'enter',
+  };
+  __hotkeysFilter;
+  _selectedResult;
+
   constructor(options) {
     if (options instanceof Object) this.options = options;
   }
@@ -59,6 +71,7 @@ export class PackageSearch {
 
     [
       'feed',
+      'hotkeys',
       'templates',
       'queryField',
       'searchDelay',
@@ -72,6 +85,7 @@ export class PackageSearch {
   get options() {
     let options = {
       feed: this.feed,
+      hotkeys: this.hotkeys,
       templates: this.templates,
       queryField: this.queryField,
       searchDelay: this.searchDelay,
@@ -92,6 +106,28 @@ export class PackageSearch {
 
   get feed() {
     return this._feed;
+  }
+
+  set hotkeys(hotkeys) {
+    if (typeof hotkeys == 'boolean') {
+      this._hotkeys.enabled = hotkeys;
+    } else if (! hotkeys instanceof Object) {
+      throw new TypeError("Valid hotkeys configuration object not provided: " + (typeof hotkeys));
+    } else {
+      [
+        'enabled',
+        'search',
+        'resultPrevious',
+        'resultNext',
+        'resultSelect',
+      ].forEach(prop => {
+        if (hotkeys.hasOwnProperty(prop)) this._hotkeys[prop] = hotkeys[prop];
+      });
+    }
+  }
+
+  get hotkeys() {
+    return this._hotkeys;
   }
 
   set templates(templates) {
@@ -188,6 +224,41 @@ export class PackageSearch {
     return this._fuse;
   }
 
+  set selectedResult(select) {
+    let resultElement = undefined;
+
+    if (this._selectedResult instanceof Element) {
+      this._selectedResult.classList.remove('selected');
+
+      if(select === 'next') {
+        resultElement = this._selectedResult.nextElementSibling instanceof Element ?
+          this._selectedResult.nextElementSibling :
+          this.resultsField.querySelector('ul li')
+      } else if (select === 'previous') {
+        resultElement = this._selectedResult.previousElementSibling instanceof Element ?
+          this._selectedResult.previousElementSibling :
+          this.resultsField.querySelector('ul li:last-child');
+      }
+    } else {
+      if(select === 'next') {
+        resultElement = this.resultsField.querySelector('ul li')
+      } else if (select === 'previous') {
+        resultElement = this.resultsField.querySelector('ul li:last-child');
+      }
+    }
+
+    if (resultElement instanceof Element) {
+      resultElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      resultElement.classList.add('selected');
+    }
+
+    this._selectedResult = resultElement;
+  }
+
+  get selectedResult() {
+    return this._selectedResult;
+  }
+
   isSetup() {
     return this.feed !== undefined &&
       this.queryField !== undefined &&
@@ -198,9 +269,26 @@ export class PackageSearch {
     if (! this.isSetup())
       throw new Error('Search is not setup correctly prior to initialization');
 
+    this._initializeHotKeys();
     this._initializeTemplates();
     this._initializeQueryField();
     this._initializeResultsField();
+  }
+
+  _initializeHotKeys() {
+    if (this.hotkeys.enabled) {
+      this.__hotkeysFilter = hotkeys.filter;
+      hotkeys.filter = this._hotKeysFilter.bind(this);
+
+      if (typeof this.hotkeys.search == 'string')
+        hotkeys(this.hotkeys.search, this._hotKeysSearch.bind(this));
+      if (typeof this.hotkeys.resultPrevious == 'string')
+        hotkeys(this.hotkeys.resultPrevious, this._hotKeysResultPrevious.bind(this));
+      if (typeof this.hotkeys.resultNext == 'string')
+        hotkeys(this.hotkeys.resultNext, this._hotKeysResultNext.bind(this));
+      if (typeof this.hotkeys.resultSelect == 'string')
+        hotkeys(this.hotkeys.resultSelect, this._hotKeysResultSelect.bind(this));
+    }
   }
 
   _initializeTemplates() {
@@ -246,6 +334,38 @@ export class PackageSearch {
 
   _initializeResultsField() {
     this._setNoResults();
+  }
+
+  _hotKeysFilter(event) {
+    return [
+      hotkeys.keyMap[this._hotkeys.resultPrevious.toLowerCase()],
+      hotkeys.keyMap[this._hotkeys.resultNext.toLowerCase()],
+      hotkeys.keyMap[this._hotkeys.resultSelect.toLowerCase()],
+    ].includes(event.keyCode) ?
+      true :
+      this.__hotkeysFilter(event);
+  }
+
+  _hotKeysSearch(event) {
+    event.preventDefault();
+    this.queryField.focus()
+  }
+
+  _hotKeysResultPrevious(event) {
+    event.preventDefault();
+    this.selectedResult = 'previous';
+  }
+
+  _hotKeysResultNext(event) {
+    event.preventDefault();
+    this.selectedResult = 'next';
+  }
+
+  _hotKeysResultSelect() {
+    if (this.selectedResult instanceof Element) {
+      let link = this.selectedResult.querySelector('a');
+      if (link !== null) link.click();
+    }
   }
 
   _fetchFeed() {
@@ -329,6 +449,9 @@ export class PackageSearch {
   }
 
   _showResults(results) {
+    this.selectedResult = null;
+    this.resultsField.replaceChildren();
+
     if (results === undefined || results.length === 0) {
       this._setNoResults();
     } else {
@@ -341,7 +464,7 @@ export class PackageSearch {
         ul.appendChild(li);
       });
 
-      this.resultsField.replaceChildren(ul);
+      this.resultsField.appendChild(ul);
     }
   }
 }
