@@ -62,12 +62,15 @@ export class PackageSearch {
   _selectedResult;
 
   constructor(options) {
-    if (options instanceof Object) this.options = options;
+    if (options instanceof Object) {
+      this.options = options;
+    }
   }
 
   set options(options) {
-    if (! options instanceof Object)
+    if (! options instanceof Object) {
       throw new TypeError('Valid options object not provided: ' + typeof options);
+    }
 
     [
       'feed',
@@ -98,8 +101,9 @@ export class PackageSearch {
   }
 
   set feed(url) {
-    if (typeof url !== 'string')
+    if (typeof url !== 'string') {
       throw new TypeError('Valid search feed URI not provided');
+    }
 
     this._feed = url;
   }
@@ -109,7 +113,7 @@ export class PackageSearch {
   }
 
   set hotkeys(hotkeys) {
-    if (typeof hotkeys == 'boolean') {
+    if (typeof hotkeys === 'boolean') {
       this._hotkeys.enabled = hotkeys;
     } else if (! hotkeys instanceof Object) {
       throw new TypeError("Valid hotkeys configuration object not provided: " + (typeof hotkeys));
@@ -121,7 +125,9 @@ export class PackageSearch {
         'resultNext',
         'resultSelect',
       ].forEach(prop => {
-        if (hotkeys.hasOwnProperty(prop)) this._hotkeys[prop] = hotkeys[prop];
+        if (hotkeys.hasOwnProperty(prop)) {
+          this._hotkeys[prop] = hotkeys[prop];
+        }
       });
     }
   }
@@ -131,8 +137,9 @@ export class PackageSearch {
   }
 
   set templates(templates) {
-    if (! templates instanceof Object)
+    if (! templates instanceof Object) {
       throw new TypeError("Valid templates object not provided");
+    }
 
     [
       'noQuery',
@@ -142,13 +149,14 @@ export class PackageSearch {
       if (templates.hasOwnProperty(template)) {
         let tag = templates[template];
 
-        if (typeof tag == 'string') {
+        if (typeof tag === 'string') {
           tag = document.createElement('template');
           tag.innerHTML = templates[template];
         }
 
-        if (tag instanceof Element)
+        if (tag instanceof Element) {
           this._templates[template] = tag;
+        }
       }
     });
   }
@@ -158,8 +166,9 @@ export class PackageSearch {
   }
 
   set queryField(element) {
-    if (! element instanceof Element || element.tagName.toLowerCase() !== 'input')
+    if (! element instanceof Element || element.tagName.toLowerCase() !== 'input') {
       throw new TypeError('Valid query box form field not provided');
+    }
 
     this._queryField = element;
   }
@@ -169,8 +178,9 @@ export class PackageSearch {
   }
 
   set searchDelay(delay) {
-    if (typeof delay !== 'number' || ! Number.isInteger(delay))
+    if (typeof delay !== 'number' || ! Number.isInteger(delay)) {
       throw new TypeError('Valid search delay integer not provided');
+    }
 
     this._searchDelay = delay;
   }
@@ -180,8 +190,9 @@ export class PackageSearch {
   }
 
   set resultsField(element) {
-    if (! element instanceof Element)
+    if (! element instanceof Element) {
       throw new TypeError('Valid search results element not provided');
+    }
 
     this._resultsField = element;
   }
@@ -191,8 +202,9 @@ export class PackageSearch {
   }
 
   set packages(packages) {
-    if (! packages instanceof Object)
+    if (! packages instanceof Object) {
       throw new TypeError('Valid packages not provided');
+    }
 
     this._packages = {
       generated: new Date(packages.generated),
@@ -207,8 +219,9 @@ export class PackageSearch {
   }
 
   set fuse(items) {
-    if (! items instanceof Array)
+    if (! items instanceof Array) {
       throw new TypeError("Valid fuse set not provided");
+    }
 
       this._fuse = new Fuse(
         items,
@@ -231,13 +244,13 @@ export class PackageSearch {
       this._selectedResult.classList.remove('selected');
 
       if(select === 'next') {
-        resultElement = this._selectedResult.nextElementSibling instanceof Element ?
-          this._selectedResult.nextElementSibling :
-          this.resultsField.querySelector('ul li')
+        resultElement = this._selectedResult.nextElementSibling instanceof Element
+          ? this._selectedResult.nextElementSibling
+          : this.resultsField.querySelector('ul li')
       } else if (select === 'previous') {
-        resultElement = this._selectedResult.previousElementSibling instanceof Element ?
-          this._selectedResult.previousElementSibling :
-          this.resultsField.querySelector('ul li:last-child');
+        resultElement = this._selectedResult.previousElementSibling instanceof Element
+          ? this._selectedResult.previousElementSibling
+          : this.resultsField.querySelector('ul li:last-child');
       }
     } else {
       if(select === 'next') {
@@ -266,8 +279,9 @@ export class PackageSearch {
   }
 
   initialize() {
-    if (! this.isSetup())
+    if (! this.isSetup()) {
       throw new Error('Search is not setup correctly prior to initialization');
+    }
 
     this._initializeHotKeys();
     this._initializeTemplates();
@@ -280,27 +294,34 @@ export class PackageSearch {
       this.__hotkeysFilter = hotkeys.filter;
       hotkeys.filter = this._hotKeysFilter.bind(this);
 
-      if (typeof this.hotkeys.search == 'string')
+      if (typeof this.hotkeys.search === 'string') {
         hotkeys(this.hotkeys.search, this._hotKeysSearch.bind(this));
-      if (typeof this.hotkeys.resultPrevious == 'string')
+      }
+      if (typeof this.hotkeys.resultPrevious === 'string') {
         hotkeys(this.hotkeys.resultPrevious, this._hotKeysResultPrevious.bind(this));
-      if (typeof this.hotkeys.resultNext == 'string')
+      }
+      if (typeof this.hotkeys.resultNext === 'string') {
         hotkeys(this.hotkeys.resultNext, this._hotKeysResultNext.bind(this));
-      if (typeof this.hotkeys.resultSelect == 'string')
+      }
+      if (typeof this.hotkeys.resultSelect === 'string') {
         hotkeys(this.hotkeys.resultSelect, this._hotKeysResultSelect.bind(this));
+      }
     }
   }
 
   _initializeTemplates() {
-    if (this.templates.noQuery === undefined)
-      this.templates = { noQuery: this.resultsField.innerHTML === '' ?
-        'No query provided.' :
-        this.resultsField.innerHTML
+    if (this.templates.noQuery === undefined) {
+      this.templates = { noQuery: this.resultsField.innerHTML === ''
+        ? 'No query provided.'
+        : this.resultsField.innerHTML
       };
-    if (this.templates.noResults === undefined)
+    }
+    if (this.templates.noResults === undefined) {
       this.templates = { noResults: 'Zero results found.' };
-    if (this.templates.result === undefined)
+    }
+    if (this.templates.result === undefined) {
       this.templates = { result: '<a href="${data.item.url}">${data.item.title}</a>' };
+    }
   }
 
   _initializeQueryField() {
@@ -341,9 +362,9 @@ export class PackageSearch {
       hotkeys.keyMap[this._hotkeys.resultPrevious.toLowerCase()],
       hotkeys.keyMap[this._hotkeys.resultNext.toLowerCase()],
       hotkeys.keyMap[this._hotkeys.resultSelect.toLowerCase()],
-    ].includes(event.keyCode) ?
-      true :
-      this.__hotkeysFilter(event);
+    ].includes(event.keyCode)
+      ? true
+      : this.__hotkeysFilter(event);
   }
 
   _hotKeysSearch(event) {
@@ -364,7 +385,9 @@ export class PackageSearch {
   _hotKeysResultSelect() {
     if (this.selectedResult instanceof Element) {
       let link = this.selectedResult.querySelector('a');
-      if (link !== null) link.click();
+      if (link !== null) {
+        link.click();
+      }
     }
   }
 
@@ -380,10 +403,11 @@ export class PackageSearch {
   }
 
   _getStringFromTemplate(template, data) {
-    if (! this.templates.hasOwnProperty(template))
+    if (! this.templates.hasOwnProperty(template)) {
       throw new Error('Valid search template not provided: ' + template);
-    else if (! data instanceof Object)
+    } else if (! data instanceof Object) {
       throw new TypeError('Valid result object not provided: ' + typeof data);
+    }
 
     try {
       return eval('`' + this.templates[template].innerHTML + '`');
@@ -434,9 +458,9 @@ export class PackageSearch {
     let match = 0;
 
     markers.forEach(mark => {
-      string[mark[0]] = mark[1] ?
-        '<span class="highlight match-group-' + (match++ % 14) + '">' + string[mark[0]] :
-        string[mark[0]] + '</span>';
+      string[mark[0]] = mark[1]
+        ? '<span class="highlight match-group-' + (match++ % 14) + '">' + string[mark[0]]
+        : string[mark[0]] + '</span>';
     });
 
     return string.join('');
