@@ -104,11 +104,14 @@ JB :
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
   #
-  archive_path    : /archive/index.html
+  archive_path    : /archive
+  packages_path   : /packages/name
+  tags_path       : /packages/tag
   categories_path : /packages/category
-  tags_path       : /packages/tag/
+  search_path     : /search
   atom_path       : /feed/atom.xml
   rss_path        : /feed/rss.xml
+  json_path       : /feed/packages.json
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.

@@ -99,3 +99,60 @@ tr:hover td {
   column-span: all;
   margin-bottom: 0.25em;
 }
+
+#search + #results {
+  margin-top: 1em;
+}
+#search + #results .noResults img {
+  margin: 0 auto;
+  width: 10vw;
+}
+#search + #results li {
+  border-left: 3px solid rgba(0, 0, 0, 0);
+  list-style-type: none;
+}
+#search + #results li.selected {
+  border-left-color: rgba(254, 121, 49, 0.5);
+}
+#search + #results li .result {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+#search + #results li:first-child .result {
+  border-top: 0;
+}
+#search + #results .result {
+  font-size: 0.85em;
+  line-height: 1.5em;
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+}
+#search + #results .result a {
+  text-decoration: none;
+}
+#search + #results .result p {
+  margin: 0;
+}
+#search + #results .result .result-title {
+  font-size: 1.15em;
+  line-height: 2em;
+}
+#search + #results .result label {
+  font-weight: bolder;
+}
+#search + #results .result .result-repository {
+  font-size: 0.9em;
+}
+.highlight.match-group-0  { background-color: #d5ebff; }
+.highlight.match-group-1  { background-color: #c4e8ac; }
+.highlight.match-group-2  { background-color: #f6d7a6; }
+.highlight.match-group-3  { background-color: #c8c8ff; }
+.highlight.match-group-4  { background-color: #f2cfff; }
+.highlight.match-group-5  { background-color: #ffc5bf; }
+.highlight.match-group-6  { background-color: #c8e7d6; }
+.highlight.match-group-7  { background-color: #9fcfff; }
+.highlight.match-group-8  { background-color: #9fcba1; }
+.highlight.match-group-9  { background-color: #e0bf8b; }
+.highlight.match-group-10 { background-color: #acadfc; }
+.highlight.match-group-11 { background-color: #e1abf5; }
+.highlight.match-group-12 { background-color: #ef9b95; }
+.highlight.match-group-13 { background-color: #abe2d0; }

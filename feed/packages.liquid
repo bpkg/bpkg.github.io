@@ -1,6 +1,6 @@
 ---
-title : JavaScript Search
-permalink : '/feed/search.json'
+title : JSON Packages Feed
+permalink : '/feed/packages.json'
 ---
 
 {
@@ -14,8 +14,8 @@ permalink : '/feed/search.json'
       "category":"{{ post.category }}",
       "tags":{{ post.tags | jsonify }},
       "repository":"{{ post.repository }}",
-      "url":"{{ site.production_url }}{{ post.url }}"
-    }{% if forloop.last == false %},{% endif %}
-    {% endfor %}
+      "url":"{{ post.url }}"
+    }{% if forloop.last == false %},
+    {% else %}{% endif %}{% endfor %}
   ]
 }

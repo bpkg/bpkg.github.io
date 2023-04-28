@@ -10,7 +10,41 @@ permalink: /search/
 
 <div>
   <input id="search" type="search" autofocus autocomplete="off" placeholder="Search for packages" />
-  <ul id="results">
-  </ul>
+  <div id="results">
+    <div class="noResults">
+      <p>Provide a search query to find packages.</p>
+      <img src="/assets/logo.svg" />
+    </div>
+  </div>
 </div>
-<script type="text/javascript" src="{{ BASE_PATH }}/assets/js/search.js" defer></script>
+<template id="result-item">
+  <div class="result">
+    <a href="${data.item.url}">
+      <p class="result-title">${data.highlight.title}</p>
+      <p class="result-description">${data.highlight.description}</p>
+      ${data.item.repository == '' ? '' : '<p><span class="result-repository"><label>Repository:</label> ' + data.highlight.repository + '</span></p>'}
+      <p>
+        <span class="result-author">${data.item.author == '' ? '' : '<label>Author:</label> '}${data.highlight.author}</span>
+        <span class="result-date"><label>Date:</label> ${data.highlight.date}</span>
+        <span class="result-category"><label>Category:</label> ${data.highlight.category}</span>
+        <span class="result-tags"><label>Tags:</label> ${data.highlight.tags.join(' | ')}</span>
+      </p>
+    </a>
+  </div>
+</template>
+<script type="module">
+  import { PackageSearch } from "{{ BASE_PATH }}/assets/js/module/search.mjs";
+  new PackageSearch({
+    feed: '{{ site.JB.json_path }}',
+    hotkeys: {
+      search: 'ctrl+s, control+s, s, /',
+    },
+    templates: {
+      noResults: '# No Results found.',
+      result: document.getElementById('result-item'),
+    },
+    queryField: document.getElementById('search'),
+    searchDelay: 250,
+    resultsField: document.getElementById('results'),
+  }).initialize();
+</script>
