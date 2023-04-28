@@ -394,9 +394,11 @@ export class PackageSearch {
   _fetchFeed() {
     fetch(this.feed)
       .then(response => response.json())
-      .then(() => console.log('Search feed fetched'))
-      .then(data => this.packages = data)
-      .then(() => console.log('Search feed loaded'))
+      .then(data => {
+        console.log('Search feed fetched');
+        this.packages = data;
+        console.log('Search feed loaded');
+      })
       .catch(err => console.warn('Failed to load search feed:', err));
     console.log('Fetching search feed');
   }
