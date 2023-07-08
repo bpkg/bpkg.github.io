@@ -4,8 +4,6 @@ title: "protobuf-parser"
 description: "A Protobuf parser, encoder and decoder in Bash."
 category: bash
 tags: [library, lib, bash, parser, protobuf]
-source code link: https://github.com/lafkpages/protobuf-parser-bash
-author: LuisAFK <soy.lafk+pbfbpkg@gmail.com>
 ---
 
 {% include JB/setup %}
