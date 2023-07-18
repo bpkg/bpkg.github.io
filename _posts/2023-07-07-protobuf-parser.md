@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "protobuf-parser"
+title: "lafkpages/protobuf-parser-bash"
 description: "A Protobuf parser, encoder and decoder in Bash."
 category: bash
 tags: [library, lib, bash, parser, protobuf]
