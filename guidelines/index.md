@@ -122,6 +122,16 @@ $ bpkg run say-hello "Bash Package Manager"
 Hello Bash Package Manager
 ```
 
+### commands-description (optional)
+
+This is a hash of descriptions for configured commands.  The keys are the names of the commands and the values are the descriptions for the specified commands.  The command descriptions can be listed on the command line by providing the `-l` or `--list` flags after the `bpkg run` command.
+
+```json
+  "commands-description": {
+    "say-hello": "Output hello to provided name (ex: bpkg run say-hello John)"
+  }
+```
+
 ## Packaging best practices
 
 These are guidelines that we strongly encourage developers to follow.
