@@ -1,5 +1,6 @@
 {
   "name": "bpkg/bpkg.github.io",
+  "version": "master",
   "description": "Homepage for the bpkg project ",
   "commands": {
     "create":         "mkdir .jekyll-cache; mkdir _site",
